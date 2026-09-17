@@ -1,0 +1,115 @@
+##### stock-kernel harness runs #####
+## date: Thu Sep 17 11:44:15 PM UTC 2026
+## uname: Linux yhh 6.8.0-134-generic #134-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 26 18:43:11 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+================ vtpmx_probe ================
+vtpmx state-machine/lifetime probe (tpm_vtpm_proxy.c, Linux 6.8)
+
+  [OK]   open /dev/vtpmx
+=== N1: NEW_DEV flags ===
+  [OK]   flags=TPM2 -> success + server fd
+  [OK]   TPM2 auto-startup served (chip registered)
+  [OK]   /dev/tpmN appeared after register
+  [OK]   flags=0 (TPM1.2) -> success
+  [OK]   flags=2 -> EOPNOTSUPP
+  [OK]   flags=0xffffffff -> EOPNOTSUPP
+  [OK]   NULL arg -> EFAULT
+=== N2: full TPM2 client<->server loop ===
+  [OK]   client STARTUP -> 10-byte TPM_RC_SUCCESS
+=== N3: server write when not WAIT_RESPONSE -> EIO ===
+  [OK]   unsolicited server write -> EIO
+=== N4: size boundaries (count vs 4096 buffer) ===
+  [OK]   server read count<req_len -> EIO
+  [OK]   server write count=4097 -> EIO
+=== N5: userspace cannot inject SET_LOCALITY (DRIVER_COMMAND gate) ===
+  [OK]   client SET_LOCALITY rejected (50+EFAULT)
+=== N6: lifetime — rapid create/teardown, distinct numbers ===
+  [OK]   6 devices created with distinct tpm_num
+  [OK]   6 rapid teardowns clean (no hang/warning)
+
+================ SUMMARY ================
+passed: 15   unexpected: 0
+Re-run under the KASAN QEMU guest with GDB on vtpmx_ioc_new_dev and
+vtpm_proxy_fops_release to confirm LIFETIME invariants dynamically.
+
+================ vtpmx_race (v2) ================
+vtpmx DETERMINISTIC RACE HARNESS v2 (drain-aware, replayable)
+
+=== R5: dup fd permutation (replayable) ===
+  [OK]   R5 dup permutation clean; closed-fd write -> EBADF
+=== state x input matrix (server fd) ===
+    no-pending write: Input/output error
+    no-pending poll(400ms): timeout(correct)
+  [OK]   state x input matrix holds
+=== R2: NEW_DEV vs register work (auto-startup timing) ===
+  [..] R2 A respond immediately        startup_seen=Y teardown=183ms
+  [..] R2 B delayed response           startup_seen=Y teardown=525ms
+  [..] R2 C close while startup pending startup_seen=Y teardown=39ms
+  [..] R2 D malformed short response   startup_seen=Y teardown=126ms
+  [OK]   R2 register-work teardown timings: no hang/oops (KASAN to confirm)
+=== R1: server close vs in-flight client transmit ===
+  [..] W1 cmd buffered (pre server-read)  anchor=Q client_report=162 close_block=0ms
+  [..] W2 WAIT_RESPONSE (pre response)    anchor=Q client_report=162 close_block=0ms
+  [..] W3 post response                   anchor=Q client_report=200 close_block=0ms
+  [OK]   R1 W3: completed response, clean teardown
+  [OK]   R1 windows exercised without hang; lifetime barrier observed
+=== R3: client close vs server operation ===
+  [..] R3 w0 client_report=-1; server/teardown no crash
+  [..] R3 w1 client_report=-1; server/teardown no crash
+  [OK]   R3 client-disappear interleavings clean (KASAN to confirm)
+=== R9: create/serve/destroy stress ===
+    40 devices cycled; first tpm=0 last tpm=0; fd_exhaustion=0
+  [OK]   stress: no fd exhaustion/hang
+
+================ SUMMARY ================
+passed:13 leads/unexpected:0 hangs:0
+Native run validates sequencing (no false positives). Re-run on Kernel B
+(KASAN): any KASAN/UAF/slab report during W1/W2/W3 or R2 is a memory-safety
+lead. A blocking close() that waits for an in-flight op is the ops_sem
+lifetime barrier working as designed, recorded as a positive result.
+
+================ vtpmx_err ================
+vtpmx ERROR-PATH / ROLLBACK HARNESS (R6/R7)
+
+=== E1: bad copy_from_user ===
+  [OK]   NULL arg -> -1/EFAULT
+  [OK]   unmapped arg -> -1/EFAULT
+=== E2: reserved flags ===
+  [OK]   flags=~TPM2 -> -1/EOPNOTSUPP
+  [OK]   flags=bit1 -> -1/EOPNOTSUPP
+  [OK]   no net fd growth after arg failures
+=== E3: get_unused_fd failure (fd exhaustion) ===
+  [OK]   E3 EMFILE + stable over 50 tries + zero fd leak
+  [OK]   post-stress NEW_DEV + register + teardown still clean
+=== E4: copy_to_user failure (read-only arg, slow rollback) ===
+  [OK]   E4 EFAULT + zero fd leak + bounded latency
+
+================ SUMMARY ================
+passed:8 fail:0
+A correct rollback returns the expected errno with zero net new fds and
+no hang. Re-run on Kernel B (KASAN) to confirm no UAF/double-free in the
+create_proxy_dev -> get_unused_fd / fput -> delete_device error paths.
+
+================ vtpmx_async ================
+vtpmx ASYNC / POLL / SAME-FD CONCURRENCY HARNESS (R4/R10)
+
+=== A: lseek negative control (no_llseek) ===
+  [OK]   lseek rejected with ESPIPE (read offset not attacker-settable)
+=== R4: NONBLOCK async transmit / poll / command_enqueued ===
+  [OK]   R4 async enqueue/EBUSY/poll-wake/read cycle correct
+=== R4c: async teardown while WAIT_RESPONSE ===
+  [..] R4c teardown=789ms child_exit=0 (fast cancel expected)
+  [OK]   R4c async teardown prompt, no hang (KASAN to confirm no UAF)
+=== R10: client close with async work in flight ===
+  [..] R10 mode0 close flush=807ms clean
+  [..] R10 mode1 close flush=1249ms clean
+  [OK]   R10 async close paths return promptly (KASAN to confirm flush_work lifetime)
+
+================ SUMMARY ================
+passed:6 leads/unexpected:0 hangs:0
+Logic run validates the async state machine and teardown latency. Re-run on
+Kernel B (KASAN): a KASAN/UAF report in tpm_dev_async_work / tpm_common_release
+/ tpm_del_char_device during R4c or R10 is a memory-safety lead. no_llseek closes
+the lseek->read-offset class by construction (verified in case A).
+
+##### END #####
