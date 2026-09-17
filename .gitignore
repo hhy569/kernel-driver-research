@@ -1,0 +1,14 @@
+# Full upstream kernel tree lives only on the research VM (never commit ~1.5GB)
+/src/
+/rootfs/
+/rootfs.cpio.gz
+*.o
+*.a
+*.cmd
+*.ko
+*.order
+*.builtin
+qemu-serial.log
+*.log
+!notes/*.md
+.DS_Store

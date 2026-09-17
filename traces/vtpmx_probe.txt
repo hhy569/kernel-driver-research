@@ -1,0 +1,28 @@
+vtpmx state-machine/lifetime probe (tpm_vtpm_proxy.c, Linux 6.8)
+
+  [OK]   open /dev/vtpmx
+=== N1: NEW_DEV flags ===
+  [OK]   flags=TPM2 -> success + server fd
+  [OK]   TPM2 auto-startup served (chip registered)
+  [OK]   /dev/tpmN appeared after register
+  [OK]   flags=0 (TPM1.2) -> success
+  [OK]   flags=2 -> EOPNOTSUPP
+  [OK]   flags=0xffffffff -> EOPNOTSUPP
+  [OK]   NULL arg -> EFAULT
+=== N2: full TPM2 client<->server loop ===
+  [OK]   client STARTUP -> 10-byte TPM_RC_SUCCESS
+=== N3: server write when not WAIT_RESPONSE -> EIO ===
+  [OK]   unsolicited server write -> EIO
+=== N4: size boundaries (count vs 4096 buffer) ===
+  [OK]   server read count<req_len -> EIO
+  [OK]   server write count=4097 -> EIO
+=== N5: userspace cannot inject SET_LOCALITY (DRIVER_COMMAND gate) ===
+  [OK]   client SET_LOCALITY rejected (50+EFAULT)
+=== N6: lifetime — rapid create/teardown, distinct numbers ===
+  [OK]   6 devices created with distinct tpm_num
+  [OK]   6 rapid teardowns clean (no hang/warning)
+
+================ SUMMARY ================
+passed: 15   unexpected: 0
+Re-run under the KASAN QEMU guest with GDB on vtpmx_ioc_new_dev and
+vtpm_proxy_fops_release to confirm LIFETIME invariants dynamically.

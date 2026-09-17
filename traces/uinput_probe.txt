@@ -1,0 +1,45 @@
+uinput attack-surface probe (drivers/input/misc/uinput.c)
+
+=== S1: UI_DEV_SETUP name validation ===
+  [OK]   empty name -> EINVAL                                 errno=22(Invalid argument)
+  [OK]   valid setup -> success                               success
+  [OK]   UI_DEV_SETUP bogus pointer -> EFAULT                 errno=14(Bad address)
+
+=== B1: UI_SET_*BIT bitmap index bounds ===
+  [OK]   UI_SET_EVBIT EV_KEY (valid)                          success
+  [OK]   UI_SET_EVBIT EV_MAX+1 -> EINVAL                      errno=22(Invalid argument)
+  [OK]   UI_SET_KEYBIT KEY_A (valid)                          success
+  [OK]   UI_SET_KEYBIT KEY_MAX+1 -> EINVAL                    errno=22(Invalid argument)
+  [OK]   UI_SET_ABSBIT ABS_X (valid)                          success
+  [OK]   UI_SET_ABSBIT ABS_MAX+1 -> EINVAL                    errno=22(Invalid argument)
+  [OK]   UI_SET_PROPBIT PROP_MAX+1 -> EINVAL                  errno=22(Invalid argument)
+
+=== V1: UI_ABS_SETUP variable size / absinfo range ===
+  [OK]   valid abs setup -> success                           success
+  [OK]   abs code > ABS_MAX -> ERANGE                         errno=34(Numerical result out of range)
+  [OK]   abs max<min -> EINVAL                                errno=22(Invalid argument)
+  [OK]   abs flat>range -> EINVAL                             errno=22(Invalid argument)
+  [OK]   UI_ABS_SETUP oversize -> E2BIG                       errno=7(Argument list too long)
+
+=== C1: UI_DEV_CREATE state machine ===
+  [OK]   UI_DEV_CREATE -> success                             success
+  [OK]   UI_SET_EVBIT after CREATE -> EINVAL                  errno=22(Invalid argument)
+  [OK]   UI_DEV_SETUP after CREATE -> EINVAL                  errno=22(Invalid argument)
+
+=== G1: UI_GET_SYSNAME variable-length copyout ===
+  [OK]   UI_GET_SYSNAME(256)                                  sysname=input11 (ret len=8)
+  [OK]   UI_GET_SYSNAME size=0 -> EINVAL                      errno=22(Invalid argument)
+
+=== X1: unknown command ===
+  [OK]   unknown cmd 0x7e -> EINVAL                           errno=22(Invalid argument)
+
+=== F1: force-feedback ff_effects_max SIZE invariant ===
+  [OK]   ff_effects_max=UINT32_MAX                            CREATE rejected errno=22(Invalid argument)
+  [OK]   UI_DEV_DESTROY -> success                            success
+
+================ SUMMARY ================
+invariant checks passed : 23
+unexpected results      : 0
+informational           : 0
+Any UNEX/NOTE is a lead to reproduce + root-cause under KASAN, not a
+confirmed bug. Static audit: BOUNDS/SIZE/USERCOPY/ARITHMETIC hold here.
