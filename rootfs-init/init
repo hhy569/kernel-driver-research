@@ -1,12 +1,17 @@
 #!/bin/sh
 # KASAN research initramfs init. Selects a test subset via cmdline tests=TAG so each
 # experiment gets its own isolated boot (BOOT matrix) instead of one giant run.
-# v2: adds grammar-based vtpmx_lifetime (L1-L5 incl. RM) and vtpmx_stress.
+# v2: grammar-based vtpmx_lifetime (L1-L5 incl. RM) and vtpmx_stress.
+# v3: FUSE request-lifetime harness (smoke / L1-L3 deterministic / L4 copy x abort).
 mount -t proc proc /proc
 mount -t sysfs sysfs /sys
 mount -t devtmpfs devtmpfs /dev 2>/dev/null
 mount -t tmpfs tmpfs /tmp
 dmesg -n 7 2>/dev/null || true
+
+# /dev/fuse is a misc char device (10:229); devtmpfs normally provides it.
+[ -e /dev/fuse ] || mknod /dev/fuse c 10 229 2>/dev/null || true
+mkdir -p /tmp/fmnt
 
 TESTS=all
 for x in $(cat /proc/cmdline); do
@@ -21,7 +26,9 @@ echo "--- cmdline ---"; cat /proc/cmdline
 echo "--- KASAN init ---"
 dmesg 2>/dev/null | grep -iE "KernelAddressSanitizer initialized|KASAN: Kernel" | head -2
 echo "--- device nodes ---"
-ls -l /dev/vtpmx /dev/uinput /dev/hpet 2>&1
+ls -l /dev/vtpmx /dev/uinput /dev/hpet /dev/fuse 2>&1
+echo "--- fuse support ---"
+grep -i fuse /proc/filesystems 2>&1 || true
 echo "========================================================="
 
 run_one() {
@@ -51,6 +58,26 @@ case "$TESTS" in
       echo "################## SKIP vtpmx_stress (not present) ##################"
     fi
     ;;
+  fuse)
+    run_one fuse_smoke
+    if [ -x /fuse_lifetime ]; then
+      echo "################## BEGIN fuse_lifetime x10 deterministic ##################"
+      /fuse_lifetime 10
+      echo "################## END fuse_lifetime rc=$? ##################"
+    fi
+    if [ -x /fuse_l4 ]; then
+      echo "################## BEGIN fuse_l4 x12 (probabilistic) ##################"
+      /fuse_l4 12
+      echo "################## END fuse_l4 rc=$? ##################"
+    fi
+    ;;
+  fuse_l4)
+    if [ -x /fuse_l4 ]; then
+      echo "################## BEGIN fuse_l4 x40 (KASAN stress) ##################"
+      /fuse_l4 40
+      echo "################## END fuse_l4 rc=$? ##################"
+    fi
+    ;;
   all)
     for t in uinput_probe vtpmx_probe vtpmx_race vtpmx_err vtpmx_async vtpmx_lifetime hpet_probe; do
       run_one "$t"
@@ -61,7 +88,7 @@ esac
 
 echo ""
 echo "================ KASAN / BUG SUMMARY (tests=$TESTS) ================"
-dmesg | grep -iE "KASAN:|BUG:|Oops|slab-out-of-bounds|heap-out-of-bounds|stack-out-of-bounds|use-after-free|use-after-scope|general protection|kernel panic|not syncing|Call Trace" | head -150
+dmesg | grep -iE "KASAN:|BUG:|Oops|slab-out-of-bounds|heap-out-of-bounds|stack-out-of-bounds|use-after-free|use-after-scope|general protection|kernel panic|not syncing|refcount|list_del|WARN_ON|Call Trace" | grep -viE "rcu_sched_clock|hw-vuln|Speculative" | head -200
 echo "================ DONE tests=$TESTS ================"
 if grep -q autorun /proc/cmdline; then sync; poweroff -f; fi
 exec /bin/sh
