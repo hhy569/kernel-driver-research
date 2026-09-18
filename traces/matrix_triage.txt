@@ -1,0 +1,72 @@
+==================== traces/boot_probe.serial ====================
+DONE_MARKER : DONE tests=probe
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN uinput_probe ##################
+  START BEGIN vtpmx_probe ##################
+  END uinput_probe rc=0
+  END vtpmx_probe rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== traces/boot_race.serial ====================
+DONE_MARKER : DONE tests=race
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_race ##################
+  END vtpmx_race rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== traces/boot_err.serial ====================
+DONE_MARKER : DONE tests=err
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_err ##################
+  END vtpmx_err rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== traces/boot_async.serial ====================
+DONE_MARKER : DONE tests=async
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_async ##################
+  END vtpmx_async rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== traces/boot_lifetime.serial ====================
+DONE_MARKER : DONE tests=lifetime
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_lifetime ##################
+  END vtpmx_lifetime rc=0
+  RESULT: PASS
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== traces/boot_stress.serial ====================
+DONE_MARKER : DONE tests=stress
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_stress ##################
+  END vtpmx_stress rc=0
+  RESULT: PASS
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS

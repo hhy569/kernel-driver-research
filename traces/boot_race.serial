@@ -1,0 +1,378 @@
+c[?7l[2J[0mSeaBIOS (version 1.16.3-debian-1.16.3-2)
+
+
+iPXE (https://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+BEFCAE00+BEF0AE00 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM...
+c[?7l[2J[    0.000000] Linux version 6.8.0 (yhh@yhh) (gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #1 SMP PREEMPT_DYNAMIC Fri Sep 18 03:07:56 UTC 2026
+[    0.000000] Command line: console=ttyS0 nokaslr panic=-1 kasan=1 kasan_multi_shot=1 loglevel=7 autorun=1 tests=race
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffdffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffe0000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 3.0.0 present.
+[    0.000000] DMI: QEMU Ubuntu 24.04 PC v2 (i440FX + PIIX, arch_caps fix, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[    0.000000] tsc: Fast TSC calibration using PIT
+[    0.000000] tsc: Detected 1997.237 MHz processor
+[    0.117989] last_pfn = 0xbffe0 max_arch_pfn = 0x400000000
+[    0.119701] MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.120854] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.198574] found SMP MP-table at [mem 0x000f5480-0x000f548f]
+[    0.244538] RAMDISK: [mem 0xbfbde000-0xbffdffff]
+[    0.246014] ACPI: Early table checksum verification disabled
+[    0.247051] ACPI: RSDP 0x00000000000F5290 000014 (v00 BOCHS )
+[    0.248249] ACPI: RSDT 0x00000000BFFE1CAD 000034 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.250565] ACPI: FACP 0x00000000BFFE1B59 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.252977] ACPI: DSDT 0x00000000BFFE0040 001B19 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.253561] ACPI: FACS 0x00000000BFFE0000 000040
+[    0.253963] ACPI: APIC 0x00000000BFFE1BCD 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.254298] ACPI: HPET 0x00000000BFFE1C4D 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.254621] ACPI: WAET 0x00000000BFFE1C85 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.255123] ACPI: Reserving FACP table memory at [mem 0xbffe1b59-0xbffe1bcc]
+[    0.255289] ACPI: Reserving DSDT table memory at [mem 0xbffe0040-0xbffe1b58]
+[    0.255405] ACPI: Reserving FACS table memory at [mem 0xbffe0000-0xbffe003f]
+[    0.255519] ACPI: Reserving APIC table memory at [mem 0xbffe1bcd-0xbffe1c4c]
+[    0.255663] ACPI: Reserving HPET table memory at [mem 0xbffe1c4d-0xbffe1c84]
+[    0.255775] ACPI: Reserving WAET table memory at [mem 0xbffe1c85-0xbffe1cac]
+[    0.279827] No NUMA configuration found
+[    0.279977] Faking a node at [mem 0x0000000000000000-0x00000000bffdffff]
+[    0.281950] NODE_DATA(0) allocated [mem 0xbfbda000-0xbfbddfff]
+[    0.290946] Zone ranges:
+[    0.291069]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.291568]   DMA32    [mem 0x0000000001000000-0x00000000bffdffff]
+[    0.291799]   Normal   empty
+[    0.291939] Movable zone start for each node
+[    0.292145] Early memory node ranges
+[    0.292298]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.293004]   node   0: [mem 0x0000000000100000-0x00000000bffdffff]
+[    0.294076] Initmem setup node 0 [mem 0x0000000000001000-0x00000000bffdffff]
+[    0.298272] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.314871] On node 0, zone DMA: 97 pages in unavailable ranges
+[    2.841178] On node 0, zone DMA32: 32 pages in unavailable ranges
+[    3.253802] kasan: KernelAddressSanitizer initialized
+[    3.254538] ACPI: PM-Timer IO Port: 0x608
+[    3.255532] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    3.256644] IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+[    3.257078] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    3.257646] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    3.257818] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    3.258010] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    3.258156] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    3.258767] ACPI: Using ACPI (MADT) for SMP configuration information
+[    3.258927] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    3.259758] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    3.261463] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    3.261628] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    3.261719] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    3.261775] PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    3.262126] [mem 0xc0000000-0xfffbffff] available for PCI devices
+[    3.262292] Booting paravirtualized kernel on bare hardware
+[    3.262850] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    3.382802] setup_percpu: NR_CPUS:64 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    3.386904] percpu: Embedded 58 pages/cpu s198080 r8192 d31296 u1048576
+[    3.391821] Kernel command line: console=ttyS0 nokaslr panic=-1 kasan=1 kasan_multi_shot=1 loglevel=7 autorun=1 tests=race
+[    3.398244] Unknown kernel command line parameters "nokaslr kasan=1 autorun=1 tests=race", will be passed to user space.
+[    3.403104] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    3.405512] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    3.410427] Fallback order for Node 0: 0 
+[    3.411412] Built 1 zonelists, mobility grouping on.  Total pages: 773856
+[    3.411566] Policy zone: DMA32
+[    3.411957] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    3.412061] stackdepot: allocating hash table via alloc_large_system_hash
+[    3.412244] stackdepot hash table entries: 1048576 (order: 12, 16777216 bytes, linear)
+[    4.174301] Memory: 2640032K/3145208K available (12288K kernel code, 3599K rwdata, 4308K rodata, 2988K init, 2128K bss, 504920K reserved, 0K cma-reserved)
+[    4.194569] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    4.217704] Dynamic Preempt: voluntary
+[    4.234764] rcu: Preemptible hierarchical RCU implementation.
+[    4.234834] rcu: 	RCU event tracing is enabled.
+[    4.234917] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=2.
+[    4.235122] 	Trampoline variant of Tasks RCU enabled.
+[    4.235354] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    4.235463] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    4.239095] NR_IRQS: 4352, nr_irqs: 440, preallocated irqs: 16
+[    4.267539] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    4.282970] Console: colour VGA+ 80x25
+[    4.286201] printk: legacy console [ttyS0] enabled
+[    4.332964] ACPI: Core revision 20230628
+[    4.353346] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    4.365506] APIC: Switch to symmetric I/O mode setup
+[    4.390673] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    4.397974] tsc: Marking TSC unstable due to TSCs unsynchronized
+[    4.399380] Calibrating delay loop (skipped), value calculated using timer frequency.. 3994.47 BogoMIPS (lpj=1997237)
+[    4.409215] process: using AMD E400 aware idle routine
+[    4.410033] Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+[    4.410505] Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+[    4.411420] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    4.412626] Spectre V2 : Mitigation: Retpolines
+[    4.413335] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    4.413896] Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+[    4.418949] x86/fpu: x87 FPU will use FXSAVE
+[    5.113583] Freeing SMP alternatives memory: 24K
+[    5.115271] pid_max: default: 32768 minimum: 301
+[    5.127761] LSM: initializing lsm=capability,integrity
+[    5.140803] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    5.141715] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    5.329715] smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+[    5.366815] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
+[    5.368965] Performance Events: PMU not available due to virtualization, using software events only.
+[    5.372929] signal: max sigframe size: 1440
+[    5.378781] rcu: Hierarchical SRCU implementation.
+[    5.379131] rcu: 	Max phase no-delay instances is 400.
+[    5.438890] smp: Bringing up secondary CPUs ...
+[    5.464257] smpboot: x86: Booting SMP configuration:
+[    5.464980] .... node  #0, CPUs:      #1
+[    5.557070] smp: Brought up 1 node, 2 CPUs
+[    5.557618] smpboot: Max logical packages: 1
+[    5.557715] smpboot: Total of 2 processors activated (8051.68 BogoMIPS)
+[    5.604117] devtmpfs: initialized
+[    5.697672] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    5.699347] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    5.712600] PM: RTC time: 04:00:00, date: 2026-09-18
+[    5.735715] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    5.759271] audit: initializing netlink subsys (disabled)
+[    5.772497] audit: type=2000 audit(1789703999.397:1): state=initialized audit_enabled=0 res=1
+[    5.793788] thermal_sys: Registered thermal governor 'step_wise'
+[    5.793929] thermal_sys: Registered thermal governor 'user_space'
+[    5.796990] cpuidle: using governor menu
+[    5.814025] PCI: Using configuration type 1 for base access
+[    5.817568] mtrr: your CPUs had inconsistent fixed MTRR settings
+[    5.818115] mtrr: your CPUs had inconsistent variable MTRR settings
+[    5.818842] mtrr: your CPUs had inconsistent MTRRdefType settings
+[    5.819152] mtrr: probably your BIOS does not setup all CPUs.
+[    5.819572] mtrr: corrected configuration.
+[    5.827477] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    5.843697] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    5.843715] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    5.873289] ACPI: Added _OSI(Module Device)
+[    5.873715] ACPI: Added _OSI(Processor Device)
+[    5.873715] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    5.873715] ACPI: Added _OSI(Processor Aggregator Device)
+[    6.562115] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    6.654790] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    6.739492] ACPI: Interpreter enabled
+[    6.744960] ACPI: PM: (supports S0 S3 S4 S5)
+[    6.746137] ACPI: Using IOAPIC for interrupt routing
+[    6.751715] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    6.751715] PCI: Using E820 reservations for host bridge windows
+[    6.788899] ACPI: Enabled 2 GPEs in block 00 to 0F
+[    8.041715] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    8.041715] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+[    8.041715] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    8.048715] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[    8.066034] PCI host bridge to bus 0000:00
+[    8.067238] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    8.067715] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    8.067715] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    8.068334] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    8.068715] pci_bus 0000:00: root bus resource [mem 0x100000000-0x17fffffff window]
+[    8.069087] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    8.078715] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[    8.106263] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[    8.131715] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+[    8.136827] pci 0000:00:01.1: BAR 4 [io  0xc040-0xc04f]
+[    8.138942] pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[    8.139422] pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[    8.139715] pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[    8.139715] pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[    8.168958] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[    8.171715] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    8.172817] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    8.193715] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+[    8.195715] pci 0000:00:02.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[    8.196830] pci 0000:00:02.0: BAR 2 [mem 0xfebb0000-0xfebb0fff]
+[    8.204245] pci 0000:00:02.0: ROM [mem 0xfeba0000-0xfebaffff pref]
+[    8.206793] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    8.230963] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000 conventional PCI endpoint
+[    8.232169] pci 0000:00:03.0: BAR 0 [mem 0xfeb80000-0xfeb9ffff]
+[    8.232715] pci 0000:00:03.0: BAR 1 [io  0xc000-0xc03f]
+[    8.241446] pci 0000:00:03.0: ROM [mem 0xfeb00000-0xfeb7ffff pref]
+[    8.794313] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    8.827949] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    8.876715] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    8.926016] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    8.945124] ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+[    9.093731] iommu: Default domain type: Translated
+[    9.093803] iommu: DMA domain TLB invalidation policy: lazy mode
+[    9.099947] pps_core: LinuxPPS API ver. 1 registered
+[    9.100379] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    9.102715] PTP clock support registered
+[    9.175715] PCI: Using ACPI for IRQ routing
+[    9.181715] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    9.181715] pci 0000:00:02.0: vgaarb: bridge control possible
+[    9.181715] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    9.185929] vgaarb: loaded
+[    9.192150] hpet: 3 channels of 0 reserved for per-cpu timers
+[    9.194302] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    9.195274] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    9.204517] clocksource: Switched to clocksource hpet
+[    9.234821] VFS: Disk quotas dquot_6.6.0
+[    9.236936] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    9.249673] pnp: PnP ACPI init
+[    9.411275] pnp: PnP ACPI: found 6 devices
+[    9.912265] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    9.916981] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    9.919479] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    9.920651] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    9.921050] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    9.921447] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    9.921488] pci_bus 0000:00: resource 8 [mem 0x100000000-0x17fffffff window]
+[    9.932387] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    9.933217] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    9.935031] PCI: CLS 0 bytes, default 64
+[    9.967863] Unpacking initramfs...
+[   10.016141] Initialise system trusted keyrings
+[   10.016141] workingset: timestamp_bits=56 max_order=20 bucket_order=0
+[   10.055201] 9p: Installing v9fs 9p2000 file system support
+[   10.886408] Key type asymmetric registered
+[   10.886408] Asymmetric key parser 'x509' registered
+[   10.888902] io scheduler mq-deadline registered
+[   10.888902] io scheduler kyber registered
+[   10.919119] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[   10.943881] ACPI: button: Power Button [PWRF]
+[   10.989888] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[   11.019027] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[   11.141546] Non-volatile memory driver v1.3
+[   11.141963] Linux agpgart interface v0.103
+[   11.585833] loop: module loaded
+[   11.606423] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[   11.622751] serio: i8042 KBD port at 0x60,0x64 irq 1
+[   11.624633] serio: i8042 AUX port at 0x60,0x64 irq 12
+[   11.638498] fail to initialize ptp_kvm
+[   11.662459] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+[   11.682099] 9pnet: Installing 9P2000 support
+[   11.687870] Key type dns_resolver registered
+[   11.729252] IPI shorthand broadcast: enabled
+[   12.300895] registered taskstats version 1
+[   12.300895] Loading compiled-in X.509 certificates
+[   13.008974] Freeing initrd memory: 4104K
+[   13.035648] PM:   Magic number: 10:753:9
+[   13.335671] Freeing unused kernel image (initmem) memory: 2988K
+[   13.339148] Write protecting the kernel read-only data: 18432k
+[   13.360671] Freeing unused kernel image (rodata/data gap) memory: 1836K
+[   14.851181] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[   14.852688] Run /init as init process
+[   15.141162] mount (39) used greatest stack depth: 28816 bytes left
+[   15.308301] mount (40) used greatest stack depth: 28616 bytes left
+================ KASAN RESEARCH INITRAMFS ================
+Linux version 6.8.0 (yhh@yhh) (gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #1 SMP PREEMPT_DYNAMIC Fri Sep 18 03:07:56 UTC 2026
+--- cmdline ---
+console=ttyS0 nokaslr panic=-1 kasan=1 kasan_multi_shot=1 loglevel=7 autorun=1 tests=race
+--- KASAN init ---
+[   15.919520] dmesg (47) used greatest stack depth: 27880 bytes left
+[    3.253802] kasan: KernelAddressSanitizer initialized
+--- device nodes ---
+crw-------    1 0        0          10, 228 Sep 18 04:00 /dev/hpet
+crw-------    1 0        0          10, 223 Sep 18 04:00 /dev/uinput
+crw-------    1 0        0          10, 126 Sep 18 04:00 /dev/vtpmx
+=========================================================
+################## BEGIN vtpmx_race ##################
+vtpmx DETERMINISTIC RACE HARNESS v2 (drain-aware, replayable)
+
+=== R5: dup fd permutation (replayable) ===
+[   16.128197] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+  [OK]   R5 dup permutation clean; closed-fd write -> EBADF
+=== state x input matrix (server fd) ===
+[   16.518553] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+    no-pending write: Input/output error
+    no-pending poll(400ms): timeout(correct)
+  [OK]   state x input matrix holds
+=== R2: NEW_DEV vs register work (auto-startup timing) ===
+[   17.627487] tpm tpm0: Operation Canceled
+  [..] R2 A respond immediately        startup_seen=Y teardown=117ms
+[   18.157460] tpm tpm0: Operation Canceled
+  [..] R2 B delayed response           startup_seen=Y teardown=520ms
+[   18.188665] tpm tpm0: Operation Canceled
+  [..] R2 C close while startup pending startup_seen=Y teardown=13ms
+  [..] R2 D malformed short response   startup_seen=Y teardown=124ms
+  [OK]   R2 register-work teardown timings: no hang/oops (KASAN to confirm)
+=== R1: server close vs in-flight client transmit ===
+[   19.104595] tpm tpm0: Operation Timed out
+[   19.104997] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   20.118242] tpm tpm0: Operation Timed out
+  [..] W1 cmd buffered (pre server-read)  anchor=Q client_report=162 close_block=0ms
+[   21.451541] tpm tpm0: Operation Timed out
+[   21.452791] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   22.479071] tpm tpm0: Operation Timed out
+  [..] W2 WAIT_RESPONSE (pre response)    anchor=Q client_report=162 close_block=0ms
+[   23.061995] hrtimer: interrupt took 2686650 ns
+[   23.829251] tpm tpm0: Operation Timed out
+[   23.829843] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   24.867037] tpm tpm0: Operation Timed out
+  [..] W3 post response                   anchor=Q client_report=162 close_block=0ms
+  [LEAD] R1 W3 did not complete cleanly (reproduce under KASAN)
+  [OK]   R1 windows exercised without hang; lifetime barrier observed
+=== R3: client close vs server operation ===
+[   26.187112] tpm tpm0: Operation Timed out
+[   26.187897] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   27.219625] tpm tpm0: Operation Timed out
+  [..] R3 w0 client_report=-1; server/teardown no crash
+[   28.030132] tpm tpm0: Operation Timed out
+[   28.030826] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.052811] tpm tpm0: Operation Timed out
+  [..] R3 w1 client_report=-1; server/teardown no crash
+  [OK]   R3 client-disappear interleavings clean (KASAN to confirm)
+=== R9: create/serve/destroy stress ===
+[   29.119470] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.177132] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.241448] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.296720] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.356557] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.417129] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.488286] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.552169] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.620290] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.689166] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.748889] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.808191] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.868369] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.927133] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   29.989247] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.044763] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.101990] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.175646] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.239739] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.307669] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.369048] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.437286] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.493071] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.559438] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.622062] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.686340] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.755063] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.817998] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.882668] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   30.950171] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.010070] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.069321] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.129543] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.187328] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.247133] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.313276] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.365123] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.420134] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.485262] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+[   31.550818] tpm tpm0: TPM in field failure mode, requires firmware upgrade
+    40 devices cycled; first tpm=0 last tpm=0; fd_exhaustion=0
+  [OK]   stress: no fd exhaustion/hang
+
+================ SUMMARY ================
+passed:12 leads/unexpected:1 hangs:0
+Native run validates sequencing (no false positives). Re-run on Kernel B
+(KASAN): any KASAN/UAF/slab report during W1/W2/W3 or R2 is a memory-safety
+lead. A blocking close() that waits for an in-flight op is the ops_sem
+lifetime barrier working as designed, recorded as a positive result.
+################## END vtpmx_race rc=0 ##################
+
+================ KASAN / BUG SUMMARY (tests=race) ================
+[    3.253802] kasan: KernelAddressSanitizer initialized
+================ DONE tests=race ================
+[   32.143167] ACPI: PM: Preparing to enter system sleep state S5
+[   32.150963] reboot: Power down

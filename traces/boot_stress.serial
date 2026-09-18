@@ -1,0 +1,3254 @@
+c[?7l[2J[0mSeaBIOS (version 1.16.3-debian-1.16.3-2)
+
+
+iPXE (https://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+BEFCAE00+BEF0AE00 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from ROM..c[?7l[2J[0m.[    0.000000] Linux version 6.8.0 (yhh@yhh) (gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #1 SMP PREEMPT_DYNAMIC Fri Sep 18 03:07:56 UTC 2026
+[    0.000000] Command line: console=ttyS0 nokaslr panic=-1 kasan=1 kasan_multi_shot=1 loglevel=7 autorun=1 tests=stress
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000bffdffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000bffe0000-0x00000000bfffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x000000fd00000000-0x000000ffffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 3.0.0 present.
+[    0.000000] DMI: QEMU Ubuntu 24.04 PC v2 (i440FX + PIIX, arch_caps fix, 1996), BIOS 1.16.3-debian-1.16.3-2 04/01/2014
+[    0.000000] last_pfn = 0xbffe0 max_arch_pfn = 0x400000000
+[    0.000000] MTRR map: 4 entries (3 fixed + 1 variable; max 19), built from 8 variable MTRRs
+[    0.000000] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.000000] found SMP MP-table at [mem 0x000f5480-0x000f548f]
+[    0.000000] RAMDISK: [mem 0xbfbde000-0xbffdffff]
+[    0.000000] ACPI: Early table checksum verification disabled
+[    0.000000] ACPI: RSDP 0x00000000000F5290 000014 (v00 BOCHS )
+[    0.000000] ACPI: RSDT 0x00000000BFFE1CAD 000034 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.000000] ACPI: FACP 0x00000000BFFE1B59 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.000000] ACPI: DSDT 0x00000000BFFE0040 001B19 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.000000] ACPI: FACS 0x00000000BFFE0000 000040
+[    0.000000] ACPI: APIC 0x00000000BFFE1BCD 000080 (v03 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.000000] ACPI: HPET 0x00000000BFFE1C4D 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.000000] ACPI: WAET 0x00000000BFFE1C85 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+[    0.000000] ACPI: Reserving FACP table memory at [mem 0xbffe1b59-0xbffe1bcc]
+[    0.000000] ACPI: Reserving DSDT table memory at [mem 0xbffe0040-0xbffe1b58]
+[    0.000000] ACPI: Reserving FACS table memory at [mem 0xbffe0000-0xbffe003f]
+[    0.000000] ACPI: Reserving APIC table memory at [mem 0xbffe1bcd-0xbffe1c4c]
+[    0.000000] ACPI: Reserving HPET table memory at [mem 0xbffe1c4d-0xbffe1c84]
+[    0.000000] ACPI: Reserving WAET table memory at [mem 0xbffe1c85-0xbffe1cac]
+[    0.000000] No NUMA configuration found
+[    0.000000] Faking a node at [mem 0x0000000000000000-0x00000000bffdffff]
+[    0.000000] NODE_DATA(0) allocated [mem 0xbfbda000-0xbfbddfff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.000000]   DMA32    [mem 0x0000000001000000-0x00000000bffdffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.000000]   node   0: [mem 0x0000000000100000-0x00000000bffdffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000001000-0x00000000bffdffff]
+[    0.000000] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.000000] On node 0, zone DMA32: 32 pages in unavailable ranges
+[    0.000000] kasan: KernelAddressSanitizer initialized
+[    0.000000] ACPI: PM-Timer IO Port: 0x608
+[    0.000000] ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+[    0.000000] IOAPIC[0]: apic_id 0, version 32, address 0xfec00000, GSI 0-23
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+[    0.000000] ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+[    0.000000] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.000000] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[    0.000000] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.000000] PM: hibernation: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.000000] [mem 0xc0000000-0xfffbffff] available for PCI devices
+[    0.000000] Booting paravirtualized kernel on bare hardware
+[    0.000000] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[    0.000000] setup_percpu: NR_CPUS:64 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.000000] percpu: Embedded 58 pages/cpu s198080 r8192 d31296 u1048576
+[    0.000000] Kernel command line: console=ttyS0 nokaslr panic=-1 kasan=1 kasan_multi_shot=1 loglevel=7 autorun=1 tests=stress
+[    0.000000] Unknown kernel command line parameters "nokaslr kasan=1 autorun=1 tests=stress", will be passed to user space.
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 773856
+[    0.000000] Policy zone: DMA32
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] stackdepot: allocating hash table via alloc_large_system_hash
+[    0.000000] stackdepot hash table entries: 1048576 (order: 12, 16777216 bytes, linear)
+[    0.000000] Memory: 2640032K/3145208K available (12288K kernel code, 3599K rwdata, 4308K rodata, 2988K init, 2128K bss, 504920K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.000000] Dynamic Preempt: voluntary
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu: 	RCU event tracing is enabled.
+[    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=2.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.000000] NR_IRQS: 4352, nr_irqs: 440, preallocated irqs: 16
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] Console: colour VGA+ 80x25
+[    0.000000] printk: legacy console [ttyS0] enabled
+[    0.000000] ACPI: Core revision 20230628
+[    0.000000] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+[    0.007000] APIC: Switch to symmetric I/O mode setup
+[    0.009000] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.017000] tsc: Unable to calibrate against PIT
+[    0.018000] tsc: using HPET reference calibration
+[    0.018000] tsc: Detected 1994.768 MHz processor
+[    0.003090] tsc: Marking TSC unstable due to TSCs unsynchronized
+[    0.004452] Calibrating delay loop (skipped), value calculated using timer frequency.. 3989.53 BogoMIPS (lpj=1994768)
+[    0.010749] process: using AMD E400 aware idle routine
+[    0.011288] Last level iTLB entries: 4KB 512, 2MB 255, 4MB 127
+[    0.011892] Last level dTLB entries: 4KB 512, 2MB 255, 4MB 127, 1GB 0
+[    0.014030] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.014984] Spectre V2 : Mitigation: Retpolines
+[    0.016326] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.016749] Spectre V2 : Spectre v2 / SpectreRSB : Filling RSB on VMEXIT
+[    0.021876] x86/fpu: x87 FPU will use FXSAVE
+[    0.710504] Freeing SMP alternatives memory: 24K
+[    0.712961] pid_max: default: 32768 minimum: 301
+[    0.732877] LSM: initializing lsm=capability,integrity
+[    0.747985] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.749251] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.957749] smpboot: CPU0: AMD QEMU Virtual CPU version 2.5+ (family: 0xf, model: 0x6b, stepping: 0x1)
+[    1.002585] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1.
+[    1.005850] Performance Events: PMU not available due to virtualization, using software events only.
+[    1.010941] signal: max sigframe size: 1440
+[    1.019749] rcu: Hierarchical SRCU implementation.
+[    1.019880] rcu: 	Max phase no-delay instances is 400.
+[    1.084930] smp: Bringing up secondary CPUs ...
+[    1.105237] smpboot: x86: Booting SMP configuration:
+[    1.105684] .... node  #0, CPUs:      #1
+[    1.197123] smp: Brought up 1 node, 2 CPUs
+[    1.197882] smpboot: Max logical packages: 1
+[    1.198313] smpboot: Total of 2 processors activated (8036.01 BogoMIPS)
+[    1.248258] devtmpfs: initialized
+[    1.376955] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    1.379836] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    1.397017] PM: RTC time: 04:02:08, date: 2026-09-18
+[    1.428749] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    1.460039] audit: initializing netlink subsys (disabled)
+[    1.466749] audit: type=2000 audit(1789704127.483:1): state=initialized audit_enabled=0 res=1
+[    1.483294] thermal_sys: Registered thermal governor 'step_wise'
+[    1.483430] thermal_sys: Registered thermal governor 'user_space'
+[    1.485749] cpuidle: using governor menu
+[    1.499749] PCI: Using configuration type 1 for base access
+[    1.500749] mtrr: your CPUs had inconsistent fixed MTRR settings
+[    1.500928] mtrr: your CPUs had inconsistent variable MTRR settings
+[    1.501567] mtrr: your CPUs had inconsistent MTRRdefType settings
+[    1.501749] mtrr: probably your BIOS does not setup all CPUs.
+[    1.501749] mtrr: corrected configuration.
+[    1.510749] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    1.529715] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    1.530193] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    1.567089] ACPI: Added _OSI(Module Device)
+[    1.567967] ACPI: Added _OSI(Processor Device)
+[    1.568236] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    1.568498] ACPI: Added _OSI(Processor Aggregator Device)
+[    2.325012] ACPI: 1 ACPI AML tables successfully acquired and loaded
+[    2.397749] ACPI: _OSC evaluation for CPUs failed, trying _PDC
+[    2.506076] ACPI: Interpreter enabled
+[    2.515928] ACPI: PM: (supports S0 S3 S4 S5)
+[    2.516871] ACPI: Using IOAPIC for interrupt routing
+[    2.521579] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    2.522420] PCI: Using E820 reservations for host bridge windows
+[    2.592893] ACPI: Enabled 2 GPEs in block 00 to 0F
+[    4.242176] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    4.246227] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+[    4.246749] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    4.251128] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[    4.275910] PCI host bridge to bus 0000:00
+[    4.277883] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    4.279137] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    4.279749] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    4.279749] pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+[    4.279885] pci_bus 0000:00: root bus resource [mem 0x100000000-0x17fffffff window]
+[    4.282070] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    4.288677] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[    4.331884] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[    4.369538] pci 0000:00:01.1: [8086:7010] type 00 class 0x010180 conventional PCI endpoint
+[    4.376317] pci 0000:00:01.1: BAR 4 [io  0xc040-0xc04f]
+[    4.379863] pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[    4.382120] pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[    4.382637] pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[    4.382749] pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[    4.417054] pci 0000:00:01.3: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[    4.420259] pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+[    4.420847] pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+[    4.449191] pci 0000:00:02.0: [1234:1111] type 00 class 0x030000 conventional PCI endpoint
+[    4.451372] pci 0000:00:02.0: BAR 0 [mem 0xfd000000-0xfdffffff pref]
+[    4.454855] pci 0000:00:02.0: BAR 2 [mem 0xfebb0000-0xfebb0fff]
+[    4.462588] pci 0000:00:02.0: ROM [mem 0xfeba0000-0xfebaffff pref]
+[    4.466026] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    4.507173] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000 conventional PCI endpoint
+[    4.509556] pci 0000:00:03.0: BAR 0 [mem 0xfeb80000-0xfeb9ffff]
+[    4.512873] pci 0000:00:03.0: BAR 1 [io  0xc000-0xc03f]
+[    4.518749] pci 0000:00:03.0: ROM [mem 0xfeb00000-0xfeb7ffff pref]
+[    5.090345] ACPI: PCI: Interrupt link LNKA configured for IRQ 10
+[    5.150985] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    5.198236] ACPI: PCI: Interrupt link LNKC configured for IRQ 11
+[    5.247280] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    5.264668] ACPI: PCI: Interrupt link LNKS configured for IRQ 9
+[    5.412049] iommu: Default domain type: Translated
+[    5.412688] iommu: DMA domain TLB invalidation policy: lazy mode
+[    5.423513] pps_core: LinuxPPS API ver. 1 registered
+[    5.424221] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    5.427150] PTP clock support registered
+[    5.537014] PCI: Using ACPI for IRQ routing
+[    5.549749] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    5.549749] pci 0000:00:02.0: vgaarb: bridge control possible
+[    5.549749] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    5.551148] vgaarb: loaded
+[    5.565390] hpet: 3 channels of 0 reserved for per-cpu timers
+[    5.567508] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+[    5.569551] hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+[    5.580783] clocksource: Switched to clocksource hpet
+[    5.614716] VFS: Disk quotas dquot_6.6.0
+[    5.618213] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    5.638726] pnp: PnP ACPI init
+[    5.834459] pnp: PnP ACPI: found 6 devices
+[    6.356297] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    6.359863] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    6.364438] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    6.365920] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    6.366344] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    6.366670] pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+[    6.366860] pci_bus 0000:00: resource 8 [mem 0x100000000-0x17fffffff window]
+[    6.378576] pci 0000:00:01.0: PIIX3: Enabling Passive Release
+[    6.379880] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    6.382498] PCI: CLS 0 bytes, default 64
+[    6.411686] Unpacking initramfs...
+[    6.498450] Initialise system trusted keyrings
+[    6.508749] workingset: timestamp_bits=56 max_order=20 bucket_order=0
+[    6.524060] 9p: Installing v9fs 9p2000 file system support
+[    7.581347] Key type asymmetric registered
+[    7.581789] Asymmetric key parser 'x509' registered
+[    7.586812] io scheduler mq-deadline registered
+[    7.587631] io scheduler kyber registered
+[    7.628655] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    7.658958] ACPI: button: Power Button [PWRF]
+[    7.722222] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    7.755523] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+[    7.902349] Non-volatile memory driver v1.3
+[    7.903360] Linux agpgart interface v0.103
+[    8.408825] loop: module loaded
+[    8.435514] i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+[    8.458452] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    8.462160] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    8.510356] fail to initialize ptp_kvm
+[    8.525462] device-mapper: ioctl: 4.48.0-ioctl (2023-03-01) initialised: dm-devel@redhat.com
+[    8.544836] 9pnet: Installing 9P2000 support
+[    8.549752] Key type dns_resolver registered
+[    8.599279] IPI shorthand broadcast: enabled
+[    9.228637] registered taskstats version 1
+[    9.230221] Loading compiled-in X.509 certificates
+[    9.906524] PM:   Magic number: 10:753:9
+[   10.027829] Freeing initrd memory: 4104K
+[   10.286027] Freeing unused kernel image (initmem) memory: 2988K
+[   10.286027] Write protecting the kernel read-only data: 18432k
+[   10.310713] Freeing unused kernel image (rodata/data gap) memory: 1836K
+[   11.940250] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[   11.944513] Run /init as init process
+[   12.272441] mount (40) used greatest stack depth: 28816 bytes left
+[   12.359827] mount (41) used greatest stack depth: 28696 bytes left
+================ KASAN RESEARCH INITRAMFS ================
+Linux version 6.8.0 (yhh@yhh) (gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, GNU ld (GNU Binutils for Ubuntu) 2.42) #1 SMP PREEMPT_DYNAMIC Fri Sep 18 03:07:56 UTC 2026
+--- cmdline ---
+console=ttyS0 nokaslr panic=-1 kasan=1 kasan_multi_shot=1 loglevel=7 autorun=1 tests=stress
+[   12.834368] cat (47) used greatest stack depth: 28672 bytes left
+--- KASAN init ---
+[   12.955105] dmesg (48) used greatest stack depth: 27944 bytes left
+[    0.000000] kasan: KernelAddressSanitizer initialized
+--- device nodes ---
+crw-------    1 0        0          10, 228 Sep 18 04:02 /dev/hpet
+crw-------    1 0        0          10, 223 Sep 18 04:02 /dev/uinput
+crw-------    1 0        0          10, 126 Sep 18 04:02 /dev/vtpmx
+=========================================================
+################## BEGIN vtpmx_stress ##################
+vtpmx R7 concurrent create/teardown/cleanup stress v2 (semantic emu)
+duration=30s seed=0x1337 slots=6 workers=4
+[000009] filling device pool
+[000032] DEV0 create tpm0
+[000092] DEV0 ready (raw+rm)
+[000104] DEV1 create tpm1
+[000161] DEV1 ready (raw+rm)
+[000173] DEV2 create tpm2
+[000230] DEV2 ready (raw+rm)
+[000244] DEV3 create tpm3
+[000299] DEV3 ready (raw+rm)
+[000318] DEV4 create tpm4
+[000374] DEV4 ready (raw+rm)
+[000386] DEV5 create tpm5
+[000442] DEV5 ready (raw+rm)
+[000444] pool full, starting workers
+[000454] DEV1 recreate begin
+[000485] DEV5 recreate begin
+[000488] DEV2 recreate begin
+[000559] DEV2 teardown tpm2 complete
+[000565] DEV1 teardown tpm1 complete
+[000575] DEV2 create tpm1
+[000578] DEV5 teardown tpm5 complete
+[000588] DEV5 create tpm5
+[000595] DEV1 create tpm2
+[000629] DEV2 ready (raw+rm)
+[000632] DEV2 recreated
+[000645] DEV4 recreate begin
+[000655] DEV5 ready (raw+rm)
+[000659] DEV1 ready (raw+rm)
+[000662] DEV5 recreated
+[000663] DEV1 recreated
+[000673] DEV4 teardown tpm4 complete
+[000681] DEV4 create tpm4
+[000737] DEV4 ready (raw+rm)
+[000737] DEV4 recreated
+[000741] DEV3 recreate begin
+[000766] DEV3 teardown tpm3 complete
+[000773] DEV3 create tpm3
+[000828] DEV3 ready (raw+rm)
+[000829] DEV3 recreated
+[000854] DEV3 recreate begin
+[000868] DEV1 recreate begin
+[000885] DEV3 teardown tpm3 complete
+[000897] DEV3 create tpm3
+[000903] DEV1 teardown tpm2 complete
+[000913] DEV1 create tpm2
+[000956] DEV3 ready (raw+rm)
+[000957] DEV3 recreated
+[000967] DEV1 ready (raw+rm)
+[000967] DEV1 recreated
+[000975] DEV4 recreate begin
+[000978] client ops=32 (sample on DEV2)
+[001004] DEV4 teardown tpm4 complete
+[001013] DEV4 create tpm4
+[001068] DEV4 ready (raw+rm)
+[001070] DEV4 recreated
+[001072] DEV4 recreate begin
+[001099] DEV4 teardown tpm4 complete
+[001107] DEV4 create tpm4
+[001165] DEV4 ready (raw+rm)
+[001166] DEV4 recreated
+[001169] DEV2 recreate begin
+[001174] DEV4 recreate begin
+[001194] DEV2 teardown tpm1 complete
+[001200] DEV2 create tpm1
+[001204] DEV4 teardown tpm4 complete
+[001211] DEV4 create tpm4
+[001261] DEV2 ready (raw+rm)
+[001262] DEV2 recreated
+[001267] DEV4 ready (raw+rm)
+[001268] DEV4 recreated
+[001274] DEV5 recreate begin
+[001282] DEV1 recreate begin
+[001284] DEV2 recreate begin
+[001313] DEV5 teardown tpm5 complete
+[001325] DEV5 create tpm5
+[001329] DEV1 teardown tpm2 complete
+[001344] DEV1 create tpm2
+[001347] DEV2 teardown tpm1 complete
+[001354] DEV2 create tpm1
+[001382] DEV5 ready (raw+rm)
+[001385] DEV5 recreated
+[001402] DEV1 ready (raw+rm)
+[001403] DEV1 recreated
+[001406] DEV1 recreate begin
+[001413] DEV2 ready (raw+rm)
+[001414] DEV2 recreated
+[001436] DEV1 teardown tpm2 complete
+[001446] DEV1 create tpm2
+[001504] DEV1 ready (raw+rm)
+[001505] DEV1 recreated
+[001506] DEV1 recreate begin
+[001527] DEV1 teardown tpm2 complete
+[001533] DEV1 create tpm2
+[001545] DEV4 recreate begin
+[001574] DEV4 teardown tpm4 complete
+[001581] DEV4 create tpm4
+[001588] DEV1 ready (raw+rm)
+[001589] DEV1 recreated
+[001590] DEV1 recreate begin
+[001618] DEV1 teardown tpm2 complete
+[001627] DEV1 create tpm2
+[001635] DEV4 ready (raw+rm)
+[001636] DEV4 recreated
+[001648] client ops=64 (sample on DEV4)
+[001681] DEV5 recreate begin
+[001684] DEV1 ready (raw+rm)
+[001685] DEV1 recreated
+[001708] DEV5 teardown tpm5 complete
+[001716] DEV5 create tpm5
+[001772] DEV5 ready (raw+rm)
+[001773] DEV5 recreated
+[001777] DEV1 recreate begin
+[001784] DEV5 recreate begin
+[001803] DEV1 teardown tpm2 complete
+[001814] DEV1 create tpm2
+[001819] DEV5 teardown tpm5 complete
+[001828] DEV5 create tpm5
+[001953] DEV1 ready (raw+rm)
+[001954] DEV1 recreated
+[002031] DEV5 ready (raw+rm)
+[002033] DEV5 recreated
+[002038] DEV3 recreate begin
+[002096] DEV3 teardown tpm3 complete
+[002113] DEV3 create tpm3
+[002169] DEV3 ready (raw+rm)
+[002171] DEV3 recreated
+[002172] DEV3 recreate begin
+[002182] client ops=96 (sample on DEV0)
+[002187] DEV2 recreate begin
+[002197] DEV3 teardown tpm3 complete
+[002211] DEV3 create tpm3
+[002214] DEV2 teardown tpm1 complete
+[002223] DEV2 create tpm1
+[002271] DEV3 ready (raw+rm)
+[002272] DEV3 recreated
+[002279] DEV2 ready (raw+rm)
+[002281] DEV2 recreated
+[002289] DEV2 recreate begin
+[002312] DEV0 recreate begin
+[002323] DEV2 teardown tpm1 complete
+[002327] DEV2 create tpm1
+[002339] DEV0 teardown tpm0 complete
+[002346] DEV0 create tpm0
+[002384] DEV2 ready (raw+rm)
+[002385] DEV2 recreated
+[002399] DEV0 ready (raw+rm)
+[002400] DEV0 recreated
+[002412] DEV2 recreate begin
+[002414] DEV4 recreate begin
+[002416] DEV5 recreate begin
+[002450] DEV4 teardown tpm4 complete
+[002453] DEV2 teardown tpm1 complete
+[002459] DEV5 teardown tpm5 complete
+[002465] DEV4 create tpm1
+[002472] DEV5 create tpm5
+[002476] DEV2 create tpm4
+[002522] DEV4 ready (raw+rm)
+[002523] DEV4 recreated
+[002530] DEV5 ready (raw+rm)
+[002531] DEV1 recreate begin
+[002533] DEV2 ready (raw+rm)
+[002535] DEV2 recreated
+[002536] DEV5 recreated
+[002554] DEV2 recreate begin
+[002562] DEV1 teardown tpm2 complete
+[002572] DEV1 create tpm2
+[002590] DEV2 teardown tpm4 complete
+[002600] DEV2 create tpm4
+[002626] DEV1 ready (raw+rm)
+[002628] DEV1 recreated
+[002631] DEV1 recreate begin
+[002649] DEV1 teardown tpm2 complete
+[002657] DEV2 ready (raw+rm)
+[002658] DEV2 recreated
+[002659] DEV1 create tpm2
+[002681] DEV0 recreate begin
+[002701] DEV0 teardown tpm0 complete
+[002709] DEV0 create tpm0
+[002713] DEV1 ready (raw+rm)
+[002715] DEV1 recreated
+[002721] DEV1 recreate begin
+[002733] DEV5 recreate begin
+[002745] DEV1 teardown tpm2 complete
+[002751] DEV1 create tpm2
+[002759] DEV5 teardown tpm5 complete
+[002763] DEV0 ready (raw+rm)
+[002766] DEV0 recreated
+[002773] DEV5 create tpm5
+[002808] DEV1 ready (raw+rm)
+[002808] DEV1 recreated
+[002820] DEV2 recreate begin
+[002827] DEV5 ready (raw+rm)
+[002828] DEV5 recreated
+[002837] DEV0 recreate begin
+[002843] DEV2 teardown tpm4 complete
+[002848] DEV2 create tpm4
+[002877] client ops=128 (sample on DEV4)
+[002882] DEV0 teardown tpm0 complete
+[002893] DEV0 create tpm0
+[002910] DEV2 ready (raw+rm)
+[002912] DEV5 recreate begin
+[002915] DEV2 recreated
+[002940] DEV5 teardown tpm5 complete
+[002949] DEV5 create tpm5
+[002950] DEV0 ready (raw+rm)
+[002951] DEV0 recreated
+[002952] DEV0 recreate begin
+[002977] DEV0 teardown tpm0 complete
+[002986] DEV0 create tpm0
+[003003] DEV5 ready (raw+rm)
+[003005] DEV5 recreated
+[003009] DEV5 recreate begin
+[003030] DEV5 teardown tpm5 complete
+[003036] DEV5 create tpm5
+[003042] DEV0 ready (raw+rm)
+[003044] DEV0 recreated
+[003048] DEV4 recreate begin
+[003055] DEV2 recreate begin
+[003074] DEV4 teardown tpm1 complete
+[003087] DEV4 create tpm1
+[003097] DEV2 teardown tpm4 complete
+[003104] DEV5 ready (raw+rm)
+[003109] DEV5 recreated
+[003117] DEV2 create tpm4
+[003146] DEV4 ready (raw+rm)
+[003148] DEV4 recreated
+[003158] DEV0 recreate begin
+[003165] DEV3 recreate begin
+[003182] DEV2 ready (raw+rm)
+[003188] DEV2 recreated
+[003204] DEV0 teardown tpm0 complete
+[003218] DEV0 create tpm0
+[003224] DEV3 teardown tpm3 complete
+[003241] DEV3 create tpm3
+[003277] DEV0 ready (raw+rm)
+[003278] DEV0 recreated
+[003297] DEV3 ready (raw+rm)
+[003299] DEV3 recreated
+[003301] DEV1 recreate begin
+[003303] DEV3 recreate begin
+[003326] DEV3 teardown tpm3 complete
+[003328] DEV1 teardown tpm2 complete
+[003331] DEV3 create tpm2
+[003336] DEV1 create tpm3
+[003388] DEV3 ready (raw+rm)
+[003389] DEV3 recreated
+[003390] DEV3 recreate begin
+[003391] DEV1 ready (raw+rm)
+[003391] DEV1 recreated
+[003403] DEV1 recreate begin
+[003409] DEV3 teardown tpm2 complete
+[003418] DEV3 create tpm2
+[003424] DEV0 recreate begin
+[003460] DEV1 teardown tpm3 complete
+[003463] DEV0 teardown tpm0 complete
+[003467] DEV1 create tpm0
+[003474] DEV0 create tpm3
+[003481] DEV3 ready (raw+rm)
+[003482] DEV3 recreated
+[003519] DEV5 recreate begin
+[003523] DEV1 ready (raw+rm)
+[003524] DEV1 recreated
+[003525] DEV1 recreate begin
+[003531] DEV0 ready (raw+rm)
+[003531] DEV0 recreated
+[003555] DEV1 teardown tpm0 complete
+[003558] DEV5 teardown tpm5 complete
+[003564] DEV4 recreate begin
+[003566] DEV1 create tpm0
+[003573] DEV2 recreate begin
+[003579] DEV5 create tpm5
+[003602] DEV2 teardown tpm4 complete
+[003612] DEV4 teardown tpm1 complete
+[003618] DEV2 create tpm1
+[003620] DEV4 create tpm4
+[003624] DEV1 ready (raw+rm)
+[003628] DEV1 recreated
+[003638] DEV5 ready (raw+rm)
+[003640] DEV5 recreated
+[003655] client ops=160 (sample on DEV1)
+[003660] DEV3 recreate begin
+[003675] DEV2 ready (raw+rm)
+[003677] DEV2 recreated
+[003678] DEV4 ready (raw+rm)
+[003680] DEV4 recreated
+[003685] DEV5 recreate begin
+[003695] DEV3 teardown tpm2 complete
+[003707] DEV3 create tpm2
+[003726] DEV5 teardown tpm5 complete
+[003736] DEV5 create tpm5
+[003760] DEV3 ready (raw+rm)
+[003761] DEV3 recreated
+[003781] DEV4 recreate begin
+[003794] DEV5 ready (raw+rm)
+[003795] DEV5 recreated
+[003803] DEV5 recreate begin
+[003810] DEV4 teardown tpm4 complete
+[003821] DEV4 create tpm4
+[003841] DEV5 teardown tpm5 complete
+[003846] DEV5 create tpm5
+[003877] DEV4 ready (raw+rm)
+[003877] DEV4 recreated
+[003879] DEV4 recreate begin
+[003899] DEV5 ready (raw+rm)
+[003901] DEV5 recreated
+[003903] DEV5 recreate begin
+[003905] DEV4 teardown tpm4 complete
+[003916] DEV4 create tpm4
+[003944] DEV5 teardown tpm5 complete
+[003951] DEV5 create tpm5
+[003974] DEV4 ready (raw+rm)
+[003975] DEV4 recreated
+[004003] DEV5 ready (raw+rm)
+[004005] DEV5 recreated
+[004030] DEV5 recreate begin
+[004046] DEV2 recreate begin
+[004062] DEV5 teardown tpm5 complete
+[004068] DEV5 create tpm5
+[004073] DEV2 teardown tpm1 complete
+[004078] DEV2 create tpm1
+[004124] DEV5 ready (raw+rm)
+[004125] DEV5 recreated
+[004126] DEV5 recreate begin
+[004132] DEV2 ready (raw+rm)
+[004133] DEV2 recreated
+[004142] DEV3 recreate begin
+[004153] DEV5 teardown tpm5 complete
+[004158] DEV5 create tpm5
+[004177] DEV3 teardown tpm2 complete
+[004187] DEV3 create tpm2
+[004203] DEV0 recreate begin
+[004215] DEV5 ready (raw+rm)
+[004220] DEV5 recreated
+[004227] client ops=192 (sample on DEV5)
+[004233] DEV5 recreate begin
+[004236] DEV0 teardown tpm3 complete
+[004243] DEV0 create tpm3
+[004248] DEV3 ready (raw+rm)
+[004249] DEV3 recreated
+[004262] DEV5 teardown tpm5 complete
+[004274] DEV5 create tpm5
+[004307] DEV0 ready (raw+rm)
+[004308] DEV0 recreated
+[004317] DEV4 recreate begin
+[004323] DEV0 recreate begin
+[004330] DEV5 ready (raw+rm)
+[004330] DEV5 recreated
+[004332] DEV5 recreate begin
+[004346] DEV4 teardown tpm4 complete
+[004353] DEV4 create tpm4
+[004359] DEV0 teardown tpm3 complete
+[004364] DEV5 teardown tpm5 complete
+[004371] DEV5 create tpm5
+[004374] DEV0 create tpm3
+[004413] DEV4 ready (raw+rm)
+[004414] DEV4 recreated
+[004427] DEV5 ready (raw+rm)
+[004429] DEV5 recreated
+[004432] DEV0 ready (raw+rm)
+[004434] DEV0 recreated
+[004438] DEV5 recreate begin
+[004459] DEV5 teardown tpm5 complete
+[004468] DEV5 create tpm5
+[004526] DEV5 ready (raw+rm)
+[004529] DEV5 recreated
+[004535] DEV5 recreate begin
+[004558] DEV5 teardown tpm5 complete
+[004566] DEV5 create tpm5
+[004623] DEV5 ready (raw+rm)
+[004625] DEV5 recreated
+[004642] DEV4 recreate begin
+[004643] DEV5 recreate begin
+[004667] DEV4 teardown tpm4 complete
+[004669] DEV5 teardown tpm5 complete
+[004676] DEV4 create tpm4
+[004679] DEV5 create tpm5
+[004732] DEV5 ready (raw+rm)
+[004734] DEV5 recreated
+[004735] DEV4 ready (raw+rm)
+[004736] DEV4 recreated
+[004745] DEV4 recreate begin
+[004749] DEV5 recreate begin
+[004751] DEV0 recreate begin
+[004783] DEV5 teardown tpm5 complete
+[004788] DEV0 teardown tpm3 complete
+[004791] DEV4 teardown tpm4 complete
+[004792] DEV5 create tpm3
+[004796] DEV0 create tpm5
+[004799] DEV4 create tpm4
+[004845] DEV5 ready (raw+rm)
+[004847] DEV5 recreated
+[004852] DEV0 ready (raw+rm)
+[004854] DEV0 recreated
+[004855] DEV4 ready (raw+rm)
+[004855] DEV4 recreated
+[004858] DEV3 recreate begin
+[004867] DEV0 recreate begin
+[004878] DEV2 recreate begin
+[004920] DEV2 teardown tpm1 complete
+[004924] DEV3 teardown tpm2 complete
+[004931] DEV2 create tpm1
+[004937] DEV0 teardown tpm5 complete
+[004942] DEV3 create tpm2
+[004946] DEV0 create tpm5
+[004987] DEV2 ready (raw+rm)
+[004989] DEV2 recreated
+[004997] DEV3 ready (raw+rm)
+[004998] DEV3 recreated
+[005004] DEV0 ready (raw+rm)
+[005006] DEV0 recreated
+[005013] client ops=224 (sample on DEV5)
+[005015] DEV0 recreate begin
+[005019] DEV2 recreate begin
+[005026] DEV1 recreate begin
+[005031] DEV4 recreate begin
+[005074] DEV2 teardown tpm1 complete
+[005083] DEV0 teardown tpm5 complete
+[005092] DEV2 create tpm1
+[005104] DEV4 teardown tpm4 complete
+[005109] DEV1 teardown tpm0 complete
+[005114] DEV0 create tpm0
+[005130] DEV1 create tpm5
+[005133] DEV4 create tpm4
+[005165] DEV2 ready (raw+rm)
+[005168] DEV2 recreated
+[005180] DEV0 ready (raw+rm)
+[005182] DEV0 recreated
+[005188] DEV3 recreate begin
+[005190] DEV1 ready (raw+rm)
+[005191] DEV1 recreated
+[005222] DEV0 recreate begin
+[005231] DEV3 teardown tpm2 complete
+[005244] DEV3 create tpm2
+[005246] DEV4 ready (raw+rm)
+[005247] DEV4 recreated
+[005254] DEV4 recreate begin
+[005255] DEV0 teardown tpm0 complete
+[005260] DEV1 recreate begin
+[005278] DEV0 create tpm0
+[005300] DEV3 ready (raw+rm)
+[005303] DEV3 recreated
+[005314] DEV4 teardown tpm4 complete
+[005321] DEV1 teardown tpm5 complete
+[005332] DEV4 create tpm4
+[005341] DEV1 create tpm5
+[005390] DEV0 ready (raw+rm)
+[005391] DEV0 recreated
+[005398] DEV4 ready (raw+rm)
+[005399] DEV4 recreated
+[005401] DEV1 ready (raw+rm)
+[005402] DEV1 recreated
+[005403] DEV2 recreate begin
+[005407] DEV4 recreate begin
+[005425] DEV2 teardown tpm1 complete
+[005432] DEV2 create tpm1
+[005434] DEV4 teardown tpm4 complete
+[005443] DEV4 create tpm4
+[005487] DEV2 ready (raw+rm)
+[005487] DEV2 recreated
+[005489] DEV2 recreate begin
+[005493] DEV0 recreate begin
+[005496] DEV4 ready (raw+rm)
+[005497] DEV4 recreated
+[005498] DEV4 recreate begin
+[005517] DEV2 teardown tpm1 complete
+[005526] DEV4 teardown tpm4 complete
+[005531] DEV0 teardown tpm0 complete
+[005533] DEV2 create tpm1
+[005535] DEV4 create tpm0
+[005542] DEV0 create tpm4
+[005586] DEV2 ready (raw+rm)
+[005588] DEV2 recreated
+[005592] DEV4 ready (raw+rm)
+[005592] DEV4 recreated
+[005599] DEV5 recreate begin
+[005634] DEV5 teardown tpm3 complete
+[005643] DEV5 create tpm3
+[005649] DEV0 ready (raw+rm)
+[005650] DEV0 recreated
+[005651] DEV0 recreate begin
+[005684] DEV0 teardown tpm4 complete
+[005691] DEV1 recreate begin
+[005696] DEV0 create tpm4
+[005699] DEV5 ready (raw+rm)
+[005704] DEV5 recreated
+[005709] DEV3 recreate begin
+[005741] DEV1 teardown tpm5 complete
+[005747] DEV1 create tpm5
+[005751] DEV0 ready (raw+rm)
+[005752] DEV0 recreated
+[005754] DEV2 recreate begin
+[005756] DEV3 teardown tpm2 complete
+[005766] DEV3 create tpm2
+[005789] DEV2 teardown tpm1 complete
+[005797] DEV2 create tpm1
+[005803] DEV1 ready (raw+rm)
+[005805] DEV1 recreated
+[005823] DEV3 ready (raw+rm)
+[005824] DEV3 recreated
+[005832] DEV0 recreate begin
+[005852] DEV2 ready (raw+rm)
+[005853] DEV2 recreated
+[005856] DEV0 teardown tpm4 complete
+[005864] DEV0 create tpm4
+[005870] DEV2 recreate begin
+[005903] DEV2 teardown tpm1 complete
+[005910] DEV2 create tpm1
+[005919] DEV0 ready (raw+rm)
+[005920] DEV0 recreated
+[005964] DEV2 ready (raw+rm)
+[005965] DEV2 recreated
+[005970] DEV4 recreate begin
+[005995] DEV0 recreate begin
+[006007] DEV4 teardown tpm0 complete
+[006011] DEV4 create tpm0
+[006023] DEV0 teardown tpm4 complete
+[006029] DEV0 create tpm4
+[006069] DEV4 ready (raw+rm)
+[006070] DEV4 recreated
+[006083] DEV2 recreate begin
+[006084] client ops=256 (sample on DEV5)
+[006086] DEV0 ready (raw+rm)
+[006086] DEV0 recreated
+[006098] DEV2 teardown tpm1 complete
+[006106] DEV2 create tpm1
+[006133] DEV4 recreate begin
+[006150] DEV4 teardown tpm0 complete
+[006157] DEV4 create tpm0
+[006162] DEV2 ready (raw+rm)
+[006163] DEV2 recreated
+[006177] DEV5 recreate begin
+[006182] DEV3 recreate begin
+[006189] DEV1 recreate begin
+[006211] DEV5 teardown tpm3 complete
+[006213] DEV4 ready (raw+rm)
+[006214] DEV4 recreated
+[006216] DEV4 recreate begin
+[006221] DEV3 teardown tpm2 complete
+[006231] DEV5 create tpm2
+[006232] DEV1 teardown tpm5 complete
+[006238] DEV3 create tpm3
+[006243] DEV1 create tpm5
+[006257] DEV4 teardown tpm0 complete
+[006268] DEV4 create tpm0
+[006286] DEV5 ready (raw+rm)
+[006287] DEV5 recreated
+[006293] DEV3 ready (raw+rm)
+[006293] DEV3 recreated
+[006300] DEV1 ready (raw+rm)
+[006301] DEV1 recreated
+[006321] DEV4 ready (raw+rm)
+[006322] DEV4 recreated
+[006323] DEV4 recreate begin
+[006347] DEV4 teardown tpm0 complete
+[006360] DEV4 create tpm0
+[006415] DEV4 ready (raw+rm)
+[006416] DEV4 recreated
+[006419] DEV2 recreate begin
+[006425] DEV4 recreate begin
+[006448] DEV2 teardown tpm1 complete
+[006458] DEV4 teardown tpm0 complete
+[006460] DEV2 create tpm1
+[006468] DEV4 create tpm0
+[006525] DEV2 ready (raw+rm)
+[006526] DEV2 recreated
+[006527] DEV4 ready (raw+rm)
+[006528] DEV4 recreated
+[006530] DEV4 recreate begin
+[006549] DEV1 recreate begin
+[006554] DEV4 teardown tpm0 complete
+[006564] DEV4 create tpm0
+[006593] DEV1 teardown tpm5 complete
+[006602] DEV1 create tpm5
+[006620] DEV4 ready (raw+rm)
+[006624] DEV4 recreated
+[006627] DEV4 recreate begin
+[006643] DEV0 recreate begin
+[006663] DEV1 ready (raw+rm)
+[006670] DEV1 recreated
+[006671] DEV4 teardown tpm0 complete
+[006676] DEV0 teardown tpm4 complete
+[006678] DEV4 create tpm0
+[006688] DEV0 create tpm4
+[006736] DEV4 ready (raw+rm)
+[006737] DEV4 recreated
+[006738] DEV4 recreate begin
+[006745] DEV0 ready (raw+rm)
+[006746] DEV0 recreated
+[006760] DEV4 teardown tpm0 complete
+[006761] DEV1 recreate begin
+[006769] DEV4 create tpm0
+[006793] DEV1 teardown tpm5 complete
+[006799] DEV1 create tpm5
+[006827] DEV4 ready (raw+rm)
+[006829] DEV4 recreated
+[006830] DEV4 recreate begin
+[006849] DEV4 teardown tpm0 complete
+[006854] DEV1 ready (raw+rm)
+[006855] DEV1 recreated
+[006856] DEV4 create tpm0
+[006914] DEV4 ready (raw+rm)
+[006915] DEV4 recreated
+[006924] DEV0 recreate begin
+[006929] client ops=288 (sample on DEV4)
+[006940] DEV3 recreate begin
+[006950] DEV0 teardown tpm4 complete
+[006961] DEV3 teardown tpm3 complete
+[006963] DEV0 create tpm4
+[006966] DEV2 recreate begin
+[006973] DEV3 create tpm3
+[006998] DEV2 teardown tpm1 complete
+[007007] DEV2 create tpm1
+[007020] DEV0 ready (raw+rm)
+[007023] DEV0 recreated
+[007030] DEV3 ready (raw+rm)
+[007032] DEV3 recreated
+[007040] DEV4 recreate begin
+[007065] DEV2 ready (raw+rm)
+[007067] DEV2 recreated
+[007072] DEV4 teardown tpm0 complete
+[007081] DEV4 create tpm0
+[007144] DEV4 ready (raw+rm)
+[007145] DEV4 recreated
+[007145] DEV4 recreate begin
+[007148] DEV3 recreate begin
+[007177] DEV4 teardown tpm0 complete
+[007185] DEV3 teardown tpm3 complete
+[007188] DEV4 create tpm0
+[007195] DEV3 create tpm3
+[007243] DEV4 ready (raw+rm)
+[007248] DEV4 recreated
+[007254] DEV1 recreate begin
+[007256] DEV3 ready (raw+rm)
+[007256] DEV3 recreated
+[007260] DEV4 recreate begin
+[007281] DEV1 teardown tpm5 complete
+[007289] DEV1 create tpm5
+[007299] DEV4 teardown tpm0 complete
+[007313] DEV4 create tpm0
+[007343] DEV1 ready (raw+rm)
+[007344] DEV1 recreated
+[007357] DEV0 recreate begin
+[007372] DEV4 ready (raw+rm)
+[007373] DEV4 recreated
+[007375] DEV4 recreate begin
+[007380] DEV0 teardown tpm4 complete
+[007394] DEV0 create tpm4
+[007414] DEV4 teardown tpm0 complete
+[007428] DEV4 create tpm0
+[007456] DEV0 ready (raw+rm)
+[007459] DEV0 recreated
+[007462] DEV3 recreate begin
+[007482] DEV4 ready (raw+rm)
+[007486] DEV4 recreated
+[007488] DEV4 recreate begin
+[007490] DEV3 teardown tpm3 complete
+[007492] DEV0 recreate begin
+[007506] DEV3 create tpm3
+[007536] DEV4 teardown tpm0 complete
+[007541] DEV0 teardown tpm4 complete
+[007547] DEV0 create tpm4
+[007553] DEV4 create tpm0
+[007563] DEV3 ready (raw+rm)
+[007567] DEV3 recreated
+[007592] DEV1 recreate begin
+[007602] DEV0 ready (raw+rm)
+[007604] DEV0 recreated
+[007607] DEV4 ready (raw+rm)
+[007608] DEV4 recreated
+[007609] DEV4 recreate begin
+[007620] DEV1 teardown tpm5 complete
+[007629] DEV1 create tpm5
+[007641] DEV4 teardown tpm0 complete
+[007649] DEV4 create tpm0
+[007687] DEV1 ready (raw+rm)
+[007688] DEV1 recreated
+[007690] DEV1 recreate begin
+[007705] DEV4 ready (raw+rm)
+[007707] DEV4 recreated
+[007714] DEV2 recreate begin
+[007718] DEV1 teardown tpm5 complete
+[007727] DEV1 create tpm5
+[007751] DEV2 teardown tpm1 complete
+[007758] DEV2 create tpm1
+[007787] DEV1 ready (raw+rm)
+[007788] DEV1 recreated
+[007796] DEV5 recreate begin
+[007812] DEV2 ready (raw+rm)
+[007813] DEV2 recreated
+[007817] client ops=320 (sample on DEV3)
+[007826] DEV5 teardown tpm2 complete
+[007840] DEV5 create tpm2
+[007895] DEV5 ready (raw+rm)
+[007895] DEV5 recreated
+[007914] DEV4 recreate begin
+[007921] DEV5 recreate begin
+[007946] DEV5 teardown tpm2 complete
+[007954] DEV4 teardown tpm0 complete
+[007956] DEV5 create tpm2
+[007964] DEV4 create tpm0
+[008014] DEV5 ready (raw+rm)
+[008014] DEV5 recreated
+[008016] DEV5 recreate begin
+[008020] DEV4 ready (raw+rm)
+[008021] DEV4 recreated
+[008041] DEV1 recreate begin
+[008056] DEV5 teardown tpm2 complete
+[008062] DEV5 create tpm2
+[008090] DEV1 teardown tpm5 complete
+[008099] DEV1 create tpm5
+[008118] DEV5 ready (raw+rm)
+[008122] DEV5 recreated
+[008137] DEV3 recreate begin
+[008158] DEV1 ready (raw+rm)
+[008159] DEV1 recreated
+[008169] DEV2 recreate begin
+[008179] DEV3 teardown tpm3 complete
+[008190] DEV3 create tpm3
+[008233] DEV2 teardown tpm1 complete
+[008242] DEV2 create tpm1
+[008245] DEV3 ready (raw+rm)
+[008247] DEV3 recreated
+[008251] DEV4 recreate begin
+[008255] client ops=352 (sample on DEV3)
+[008277] DEV5 recreate begin
+[008285] DEV4 teardown tpm0 complete
+[008294] DEV4 create tpm0
+[008306] DEV2 ready (raw+rm)
+[008311] DEV5 teardown tpm2 complete
+[008313] DEV2 recreated
+[008320] DEV5 create tpm2
+[008334] DEV0 recreate begin
+[008352] DEV4 ready (raw+rm)
+[008352] DEV4 recreated
+[008354] DEV3 recreate begin
+[008370] DEV0 teardown tpm4 complete
+[008376] DEV5 ready (raw+rm)
+[008380] DEV0 create tpm4
+[008382] DEV5 recreated
+[008389] DEV3 teardown tpm3 complete
+[008396] DEV3 create tpm3
+[008433] DEV0 ready (raw+rm)
+[008435] DEV0 recreated
+[008444] DEV0 recreate begin
+[008456] DEV3 ready (raw+rm)
+[008458] DEV3 recreated
+[008473] DEV0 teardown tpm4 complete
+[008481] DEV0 create tpm4
+[008512] DEV4 recreate begin
+[008531] DEV4 teardown tpm0 complete
+[008538] DEV0 ready (raw+rm)
+[008539] DEV0 recreated
+[008540] DEV4 create tpm0
+[008595] DEV4 ready (raw+rm)
+[008596] DEV4 recreated
+[008606] DEV3 recreate begin
+[008609] client ops=384 (sample on DEV4)
+[008615] DEV0 recreate begin
+[008620] DEV4 recreate begin
+[008642] DEV3 teardown tpm3 complete
+[008647] DEV4 teardown tpm0 complete
+[008654] DEV4 create tpm0
+[008656] DEV0 teardown tpm4 complete
+[008658] DEV3 create tpm3
+[008664] DEV0 create tpm4
+[008710] DEV4 ready (raw+rm)
+[008711] DEV4 recreated
+[008713] DEV3 ready (raw+rm)
+[008714] DEV3 recreated
+[008719] DEV4 recreate begin
+[008721] DEV0 ready (raw+rm)
+[008722] DEV0 recreated
+[008723] DEV0 recreate begin
+[008749] DEV0 teardown tpm4 complete
+[008751] DEV4 teardown tpm0 complete
+[008757] DEV4 create tpm4
+[008758] DEV0 create tpm0
+[008813] DEV4 ready (raw+rm)
+[008815] DEV4 recreated
+[008816] DEV0 ready (raw+rm)
+[008818] DEV0 recreated
+[008824] DEV0 recreate begin
+[008848] DEV0 teardown tpm0 complete
+[008859] DEV0 create tpm0
+[008885] DEV1 recreate begin
+[008909] DEV1 teardown tpm5 complete
+[008913] DEV1 create tpm5
+[008914] DEV0 ready (raw+rm)
+[008915] DEV0 recreated
+[008917] DEV0 recreate begin
+[008921] DEV4 recreate begin
+[008952] DEV4 teardown tpm4 complete
+[008959] DEV0 teardown tpm0 complete
+[008961] DEV4 create tpm0
+[008964] DEV0 create tpm4
+[008973] DEV1 ready (raw+rm)
+[008975] DEV1 recreated
+[009018] DEV4 ready (raw+rm)
+[009019] DEV4 recreated
+[009021] DEV0 ready (raw+rm)
+[009022] DEV0 recreated
+[009078] DEV4 recreate begin
+[009080] DEV5 recreate begin
+[009108] DEV5 teardown tpm2 complete
+[009113] DEV4 teardown tpm0 complete
+[009115] DEV5 create tpm0
+[009119] DEV4 create tpm2
+[009171] DEV5 ready (raw+rm)
+[009171] DEV5 recreated
+[009173] DEV4 ready (raw+rm)
+[009174] DEV4 recreated
+[009177] client ops=416 (sample on DEV1)
+[009187] DEV1 recreate begin
+[009206] DEV0 recreate begin
+[009221] DEV1 teardown tpm5 complete
+[009230] DEV0 teardown tpm4 complete
+[009235] DEV1 create tpm5
+[009242] DEV0 create tpm4
+[009289] DEV1 ready (raw+rm)
+[009290] DEV1 recreated
+[009292] DEV1 recreate begin
+[009295] DEV3 recreate begin
+[009298] DEV0 ready (raw+rm)
+[009299] DEV0 recreated
+[009323] DEV1 teardown tpm5 complete
+[009329] DEV1 create tpm5
+[009340] DEV3 teardown tpm3 complete
+[009350] DEV3 create tpm3
+[009385] DEV1 ready (raw+rm)
+[009386] DEV1 recreated
+[009390] DEV4 recreate begin
+[009407] DEV3 ready (raw+rm)
+[009409] DEV3 recreated
+[009412] DEV1 recreate begin
+[009414] DEV4 teardown tpm2 complete
+[009427] DEV4 create tpm2
+[009439] DEV1 teardown tpm5 complete
+[009449] DEV1 create tpm5
+[009481] DEV4 ready (raw+rm)
+[009483] DEV4 recreated
+[009502] DEV4 recreate begin
+[009504] DEV1 ready (raw+rm)
+[009505] DEV1 recreated
+[009514] DEV5 recreate begin
+[009530] DEV4 teardown tpm2 complete
+[009536] DEV5 teardown tpm0 complete
+[009539] DEV4 create tpm2
+[009548] DEV5 create tpm0
+[009596] DEV4 ready (raw+rm)
+[009597] DEV4 recreated
+[009603] DEV5 ready (raw+rm)
+[009605] DEV5 recreated
+[009617] DEV0 recreate begin
+[009623] DEV5 recreate begin
+[009643] DEV0 teardown tpm4 complete
+[009645] DEV5 teardown tpm0 complete
+[009651] DEV0 create tpm0
+[009656] DEV5 create tpm4
+[009712] DEV0 ready (raw+rm)
+[009713] DEV0 recreated
+[009717] DEV5 ready (raw+rm)
+[009718] DEV5 recreated
+[009724] client ops=448 (sample on DEV5)
+[009728] DEV5 recreate begin
+[009734] DEV3 recreate begin
+[009740] DEV0 recreate begin
+[009770] DEV5 teardown tpm4 complete
+[009778] DEV0 teardown tpm0 complete
+[009782] DEV3 teardown tpm3 complete
+[009785] DEV5 create tpm0
+[009804] DEV0 create tpm3
+[009806] DEV3 create tpm4
+[009842] DEV5 ready (raw+rm)
+[009843] DEV5 recreated
+[009860] DEV0 ready (raw+rm)
+[009861] DEV0 recreated
+[009864] DEV3 ready (raw+rm)
+[009865] DEV3 recreated
+[009866] DEV5 recreate begin
+[009891] DEV5 teardown tpm0 complete
+[009898] DEV5 create tpm0
+[009906] DEV1 recreate begin
+[009924] DEV1 teardown tpm5 complete
+[009930] DEV1 create tpm5
+[009957] DEV5 ready (raw+rm)
+[009958] DEV5 recreated
+[009959] DEV5 recreate begin
+[009961] DEV0 recreate begin
+[009987] DEV1 ready (raw+rm)
+[009988] DEV1 recreated
+[009990] DEV0 teardown tpm3 complete
+[009991] DEV5 teardown tpm0 complete
+[009998] DEV5 create tpm3
+[010003] DEV1 recreate begin
+[010004] DEV0 create tpm0
+[010040] DEV1 teardown tpm5 complete
+[010049] DEV1 create tpm5
+[010056] DEV5 ready (raw+rm)
+[010058] DEV5 recreated
+[010062] DEV0 ready (raw+rm)
+[010062] DEV0 recreated
+[010090] DEV5 recreate begin
+[010102] DEV1 ready (raw+rm)
+[010103] DEV1 recreated
+[010112] DEV1 recreate begin
+[010112] DEV5 teardown tpm3 complete
+[010116] DEV2 recreate begin
+[010128] DEV5 create tpm3
+[010156] DEV2 teardown tpm1 complete
+[010167] DEV1 teardown tpm5 complete
+[010171] DEV2 create tpm1
+[010174] DEV1 create tpm5
+[010193] DEV5 ready (raw+rm)
+[010196] DEV5 recreated
+[010210] DEV5 recreate begin
+[010225] DEV2 ready (raw+rm)
+[010226] DEV2 recreated
+[010235] DEV1 ready (raw+rm)
+[010236] DEV1 recreated
+[010237] DEV5 teardown tpm3 complete
+[010240] DEV0 recreate begin
+[010245] DEV5 create tpm3
+[010253] DEV1 recreate begin
+[010289] DEV1 teardown tpm5 complete
+[010291] DEV0 teardown tpm0 complete
+[010297] DEV1 create tpm0
+[010300] DEV5 ready (raw+rm)
+[010302] DEV5 recreated
+[010306] DEV0 create tpm5
+[010350] DEV1 ready (raw+rm)
+[010351] DEV1 recreated
+[010353] DEV1 recreate begin
+[010359] DEV0 ready (raw+rm)
+[010359] DEV0 recreated
+[010372] DEV2 recreate begin
+[010378] DEV1 teardown tpm0 complete
+[010385] DEV1 create tpm0
+[010397] DEV2 teardown tpm1 complete
+[010410] DEV2 create tpm1
+[010443] DEV1 ready (raw+rm)
+[010444] DEV1 recreated
+[010466] DEV2 ready (raw+rm)
+[010467] DEV2 recreated
+[010470] DEV5 recreate begin
+[010484] client ops=480 (sample on DEV2)
+[010490] DEV4 recreate begin
+[010497] DEV0 recreate begin
+[010500] DEV5 teardown tpm3 complete
+[010512] DEV5 create tpm3
+[010534] DEV0 teardown tpm5 complete
+[010544] DEV0 create tpm5
+[010545] DEV4 teardown tpm2 complete
+[010553] DEV4 create tpm2
+[010570] DEV5 ready (raw+rm)
+[010575] DEV5 recreated
+[010599] DEV0 ready (raw+rm)
+[010601] DEV0 recreated
+[010611] DEV4 ready (raw+rm)
+[010612] DEV4 recreated
+[010614] DEV4 recreate begin
+[010621] DEV5 recreate begin
+[010642] DEV4 teardown tpm2 complete
+[010648] DEV5 teardown tpm3 complete
+[010652] DEV4 create tpm2
+[010657] DEV5 create tpm3
+[010709] DEV4 ready (raw+rm)
+[010710] DEV4 recreated
+[010712] DEV5 ready (raw+rm)
+[010713] DEV5 recreated
+[010729] DEV3 recreate begin
+[010747] DEV4 recreate begin
+[010759] DEV1 recreate begin
+[010760] DEV3 teardown tpm4 complete
+[010769] DEV3 create tpm4
+[010799] DEV4 teardown tpm2 complete
+[010802] DEV1 teardown tpm0 complete
+[010809] DEV4 create tpm2
+[010811] DEV1 create tpm0
+[010823] DEV3 ready (raw+rm)
+[010823] DEV3 recreated
+[010831] DEV0 recreate begin
+[010862] DEV0 teardown tpm5 complete
+[010864] DEV4 ready (raw+rm)
+[010864] DEV4 recreated
+[010867] DEV1 ready (raw+rm)
+[010868] DEV1 recreated
+[010870] DEV0 create tpm5
+[010913] DEV5 recreate begin
+[010917] DEV2 recreate begin
+[010928] DEV0 ready (raw+rm)
+[010932] DEV0 recreated
+[010934] DEV0 recreate begin
+[010941] DEV5 teardown tpm3 complete
+[010952] DEV5 create tpm3
+[010960] DEV2 teardown tpm1 complete
+[010970] DEV0 teardown tpm5 complete
+[010973] DEV2 create tpm1
+[010980] DEV0 create tpm5
+[011009] DEV5 ready (raw+rm)
+[011010] DEV5 recreated
+[011027] DEV2 ready (raw+rm)
+[011028] DEV2 recreated
+[011039] DEV0 ready (raw+rm)
+[011040] DEV0 recreated
+[011045] DEV1 recreate begin
+[011070] DEV1 teardown tpm0 complete
+[011077] DEV1 create tpm0
+[011131] DEV1 ready (raw+rm)
+[011133] DEV1 recreated
+[011135] DEV1 recreate begin
+[011151] client ops=512 (sample on DEV3)
+[011158] DEV1 teardown tpm0 complete
+[011164] DEV1 create tpm0
+[011222] DEV1 ready (raw+rm)
+[011223] DEV1 recreated
+[011224] DEV1 recreate begin
+[011227] DEV4 recreate begin
+[011247] DEV4 teardown tpm2 complete
+[011250] DEV1 teardown tpm0 complete
+[011256] DEV1 create tpm2
+[011258] DEV4 create tpm0
+[011311] DEV1 ready (raw+rm)
+[011314] DEV1 recreated
+[011315] DEV4 ready (raw+rm)
+[011316] DEV4 recreated
+[011328] DEV2 recreate begin
+[011330] DEV5 recreate begin
+[011353] DEV2 teardown tpm1 complete
+[011359] DEV5 teardown tpm3 complete
+[011361] DEV2 create tpm1
+[011369] DEV5 create tpm3
+[011416] DEV2 ready (raw+rm)
+[011417] DEV2 recreated
+[011425] DEV5 ready (raw+rm)
+[011426] DEV5 recreated
+[011427] DEV5 recreate begin
+[011440] DEV4 recreate begin
+[011447] DEV5 teardown tpm3 complete
+[011455] DEV5 create tpm3
+[011459] DEV4 teardown tpm0 complete
+[011467] DEV4 create tpm0
+[011510] DEV5 ready (raw+rm)
+[011511] DEV5 recreated
+[011522] DEV4 ready (raw+rm)
+[011523] DEV4 recreated
+[011525] DEV5 recreate begin
+[011528] DEV3 recreate begin
+[011532] DEV2 recreate begin
+[011554] DEV5 teardown tpm3 complete
+[011556] DEV2 teardown tpm1 complete
+[011562] DEV5 create tpm1
+[011572] DEV2 create tpm3
+[011587] DEV3 teardown tpm4 complete
+[011599] DEV3 create tpm4
+[011625] DEV5 ready (raw+rm)
+[011626] DEV5 recreated
+[011629] DEV2 ready (raw+rm)
+[011632] DEV2 recreated
+[011645] DEV5 recreate begin
+[011653] DEV3 ready (raw+rm)
+[011653] DEV3 recreated
+[011656] DEV3 recreate begin
+[011673] DEV5 teardown tpm1 complete
+[011680] DEV5 create tpm1
+[011688] DEV3 teardown tpm4 complete
+[011699] DEV3 create tpm4
+[011743] DEV5 ready (raw+rm)
+[011744] DEV5 recreated
+[011755] DEV3 ready (raw+rm)
+[011756] DEV3 recreated
+[011759] DEV5 recreate begin
+[011783] DEV5 teardown tpm1 complete
+[011785] DEV0 recreate begin
+[011792] DEV5 create tpm1
+[011828] DEV0 teardown tpm5 complete
+[011836] DEV0 create tpm5
+[011850] DEV5 ready (raw+rm)
+[011852] DEV5 recreated
+[011891] DEV0 ready (raw+rm)
+[011892] DEV0 recreated
+[011895] DEV4 recreate begin
+[011920] client ops=544 (sample on DEV0)
+[011921] DEV4 teardown tpm0 complete
+[011938] DEV4 create tpm0
+[011958] DEV3 recreate begin
+[011986] DEV3 teardown tpm4 complete
+[011994] DEV4 ready (raw+rm)
+[011994] DEV4 recreated
+[011997] DEV3 create tpm4
+[012003] DEV4 recreate begin
+[012028] DEV4 teardown tpm0 complete
+[012036] DEV4 create tpm0
+[012061] DEV3 ready (raw+rm)
+[012063] DEV3 recreated
+[012065] DEV3 recreate begin
+[012088] DEV3 teardown tpm4 complete
+[012093] DEV4 ready (raw+rm)
+[012095] DEV4 recreated
+[012099] DEV3 create tpm4
+[012105] DEV1 recreate begin
+[012131] DEV1 teardown tpm2 complete
+[012139] DEV1 create tpm2
+[012153] DEV3 ready (raw+rm)
+[012156] DEV3 recreated
+[012194] DEV1 ready (raw+rm)
+[012195] DEV1 recreated
+[012203] DEV1 recreate begin
+[012208] DEV0 recreate begin
+[012223] DEV3 recreate begin
+[012239] DEV1 teardown tpm2 complete
+[012240] DEV0 teardown tpm5 complete
+[012247] DEV1 create tpm2
+[012253] DEV0 create tpm5
+[012257] DEV3 teardown tpm4 complete
+[012264] DEV3 create tpm4
+[012304] DEV1 ready (raw+rm)
+[012307] DEV1 recreated
+[012309] DEV0 ready (raw+rm)
+[012310] DEV0 recreated
+[012316] DEV4 recreate begin
+[012320] DEV3 ready (raw+rm)
+[012321] DEV3 recreated
+[012338] DEV3 recreate begin
+[012342] DEV4 teardown tpm0 complete
+[012350] DEV4 create tpm0
+[012364] DEV3 teardown tpm4 complete
+[012373] DEV3 create tpm4
+[012412] DEV4 ready (raw+rm)
+[012413] DEV4 recreated
+[012428] DEV3 ready (raw+rm)
+[012428] DEV3 recreated
+[012446] client ops=576 (sample on DEV0)
+[012457] DEV0 recreate begin
+[012492] DEV0 teardown tpm5 complete
+[012499] DEV0 create tpm5
+[012556] DEV0 ready (raw+rm)
+[012558] DEV0 recreated
+[012566] DEV0 recreate begin
+[012571] DEV3 recreate begin
+[012598] DEV0 teardown tpm5 complete
+[012604] DEV3 teardown tpm4 complete
+[012606] DEV0 create tpm5
+[012616] DEV3 create tpm4
+[012663] DEV0 ready (raw+rm)
+[012664] DEV0 recreated
+[012672] DEV3 ready (raw+rm)
+[012673] DEV3 recreated
+[012686] DEV3 recreate begin
+[012690] DEV5 recreate begin
+[012716] DEV3 teardown tpm4 complete
+[012723] DEV5 teardown tpm1 complete
+[012725] DEV3 create tpm4
+[012734] DEV5 create tpm1
+[012783] DEV3 ready (raw+rm)
+[012785] DEV3 recreated
+[012791] DEV5 ready (raw+rm)
+[012793] DEV5 recreated
+[012829] client ops=608 (sample on DEV0)
+[012834] DEV0 recreate begin
+[012836] DEV2 recreate begin
+[012837] DEV1 recreate begin
+[   25.982666] tpm tpm2: Operation Canceled
+[012877] DEV0 teardown tpm5 complete
+[012879] DEV1 teardown tpm2 complete
+[012890] DEV0 create tpm2
+[012893] DEV2 teardown tpm3 complete
+[012897] DEV1 create tpm5
+[012908] DEV2 create tpm3
+[012947] DEV0 ready (raw+rm)
+[012949] DEV0 recreated
+[012960] DEV1 ready (raw+rm)
+[012962] DEV1 recreated
+[012965] DEV2 ready (raw+rm)
+[012966] DEV2 recreated
+[012967] DEV2 recreate begin
+[012969] DEV0 recreate begin
+[013001] DEV0 teardown tpm2 complete
+[013007] DEV2 teardown tpm3 complete
+[013012] DEV0 create tpm2
+[013019] DEV2 create tpm3
+[013070] DEV0 ready (raw+rm)
+[013071] DEV0 recreated
+[013072] DEV0 recreate begin
+[013073] DEV2 ready (raw+rm)
+[013074] DEV2 recreated
+[013076] DEV1 recreate begin
+[013079] DEV2 recreate begin
+[013109] DEV0 teardown tpm2 complete
+[013119] DEV0 create tpm2
+[013125] DEV1 teardown tpm5 complete
+[013126] DEV2 teardown tpm3 complete
+[013133] DEV2 create tpm5
+[013136] DEV1 create tpm3
+[013174] DEV0 ready (raw+rm)
+[013176] DEV0 recreated
+[013188] DEV2 ready (raw+rm)
+[013188] DEV2 recreated
+[013190] DEV2 recreate begin
+[013195] DEV1 ready (raw+rm)
+[013196] DEV1 recreated
+[013209] DEV3 recreate begin
+[013225] DEV2 teardown tpm5 complete
+[013231] DEV2 create tpm5
+[013250] DEV3 teardown tpm4 complete
+[013256] DEV3 create tpm4
+[013287] DEV2 ready (raw+rm)
+[013288] DEV2 recreated
+[013308] DEV5 recreate begin
+[013313] DEV3 ready (raw+rm)
+[013315] DEV3 recreated
+[013316] DEV3 recreate begin
+[013340] DEV3 teardown tpm4 complete
+[013345] DEV3 create tpm4
+[013350] DEV5 teardown tpm1 complete
+[013358] DEV5 create tpm1
+[013402] DEV3 ready (raw+rm)
+[013402] DEV3 recreated
+[013415] DEV5 ready (raw+rm)
+[013417] DEV5 recreated
+[013418] DEV3 recreate begin
+[013435] DEV4 recreate begin
+[013448] DEV3 teardown tpm4 complete
+[013456] DEV3 create tpm4
+[013474] DEV4 teardown tpm0 complete
+[013479] DEV4 create tpm0
+[013510] DEV3 ready (raw+rm)
+[013511] DEV3 recreated
+[013515] DEV2 recreate begin
+[013534] DEV2 teardown tpm5 complete
+[013536] DEV4 ready (raw+rm)
+[013536] DEV4 recreated
+[013544] DEV2 create tpm5
+[013545] DEV5 recreate begin
+[013566] DEV5 teardown tpm1 complete
+[013572] DEV5 create tpm1
+[013601] DEV2 ready (raw+rm)
+[013602] DEV2 recreated
+[013606] DEV1 recreate begin
+[013626] DEV1 teardown tpm3 complete
+[013629] DEV5 ready (raw+rm)
+[013631] DEV5 recreated
+[013641] DEV1 create tpm3
+[013663] client ops=640 (sample on DEV2)
+[013695] DEV1 ready (raw+rm)
+[013697] DEV1 recreated
+[013719] DEV0 recreate begin
+[013721] DEV5 recreate begin
+[013752] DEV5 teardown tpm1 complete
+[013761] DEV5 create tpm1
+[013768] DEV0 teardown tpm2 complete
+[013775] DEV0 create tpm2
+[013823] DEV5 ready (raw+rm)
+[013824] DEV5 recreated
+[013829] DEV0 ready (raw+rm)
+[013833] DEV0 recreated
+[013836] DEV2 recreate begin
+[013838] DEV1 recreate begin
+[013854] DEV5 recreate begin
+[013883] DEV5 teardown tpm1 complete
+[013887] DEV2 teardown tpm5 complete
+[013891] DEV1 teardown tpm3 complete
+[013896] DEV5 create tpm1
+[013905] DEV2 create tpm3
+[013916] DEV1 create tpm5
+[013953] DEV5 ready (raw+rm)
+[013957] DEV5 recreated
+[013969] DEV2 ready (raw+rm)
+[013969] DEV2 recreated
+[013974] DEV4 recreate begin
+[013975] DEV1 ready (raw+rm)
+[013976] DEV1 recreated
+[013983] DEV2 recreate begin
+[013999] DEV3 recreate begin
+[014000] DEV4 teardown tpm0 complete
+[014007] DEV4 create tpm0
+[014019] DEV2 teardown tpm3 complete
+[014023] DEV3 teardown tpm4 complete
+[014027] DEV2 create tpm3
+[014032] DEV3 create tpm4
+[014067] DEV4 ready (raw+rm)
+[014069] DEV4 recreated
+[014070] DEV4 recreate begin
+[014084] DEV2 ready (raw+rm)
+[014084] DEV2 recreated
+[014092] DEV2 recreate begin
+[014093] DEV4 teardown tpm0 complete
+[014102] DEV4 create tpm0
+[014121] DEV2 teardown tpm3 complete
+[014128] DEV2 create tpm3
+[014140] DEV3 ready (raw+rm)
+[014143] DEV3 recreated
+[014159] DEV0 recreate begin
+[014160] DEV4 ready (raw+rm)
+[014160] DEV4 recreated
+[014175] DEV4 recreate begin
+[014182] DEV0 teardown tpm2 complete
+[014186] DEV2 ready (raw+rm)
+[014186] DEV2 recreated
+[014190] DEV0 create tpm2
+[014198] DEV4 teardown tpm0 complete
+[014206] DEV4 create tpm0
+[014245] DEV0 ready (raw+rm)
+[014247] DEV0 recreated
+[014253] DEV1 recreate begin
+[014258] DEV4 ready (raw+rm)
+[014258] DEV4 recreated
+[014262] DEV0 recreate begin
+[014267] DEV5 recreate begin
+[014282] DEV1 teardown tpm5 complete
+[014286] DEV0 teardown tpm2 complete
+[014287] DEV1 create tpm2
+[014296] DEV0 create tpm5
+[014307] DEV5 teardown tpm1 complete
+[014311] DEV5 create tpm1
+[014344] DEV1 ready (raw+rm)
+[014345] DEV1 recreated
+[014352] DEV0 ready (raw+rm)
+[014353] DEV0 recreated
+[014356] DEV1 recreate begin
+[014365] DEV2 recreate begin
+[014368] client ops=672 (sample on DEV3)
+[014370] DEV5 ready (raw+rm)
+[014372] DEV5 recreated
+[014384] DEV1 teardown tpm2 complete
+[014389] DEV1 create tpm2
+[014395] DEV2 teardown tpm3 complete
+[014400] DEV2 create tpm3
+[014445] DEV1 ready (raw+rm)
+[014447] DEV1 recreated
+[014456] DEV2 ready (raw+rm)
+[014456] DEV2 recreated
+[014477] DEV2 recreate begin
+[014478] DEV1 recreate begin
+[014487] DEV0 recreate begin
+[014511] DEV1 teardown tpm2 complete
+[014515] DEV2 teardown tpm3 complete
+[014520] DEV1 create tpm2
+[014524] DEV2 create tpm3
+[014529] DEV0 teardown tpm5 complete
+[014536] DEV0 create tpm5
+[014579] DEV2 ready (raw+rm)
+[014584] DEV2 recreated
+[014586] DEV1 ready (raw+rm)
+[014587] DEV1 recreated
+[014592] DEV0 ready (raw+rm)
+[014594] DEV0 recreated
+[014602] DEV3 recreate begin
+[014610] DEV0 recreate begin
+[014632] DEV2 recreate begin
+[014634] DEV3 teardown tpm4 complete
+[014642] DEV3 create tpm4
+[014646] DEV0 teardown tpm5 complete
+[014654] DEV0 create tpm5
+[014656] DEV2 teardown tpm3 complete
+[014666] DEV2 create tpm3
+[014695] DEV3 ready (raw+rm)
+[014698] DEV3 recreated
+[014706] DEV0 ready (raw+rm)
+[014706] DEV0 recreated
+[014723] DEV2 ready (raw+rm)
+[014724] DEV2 recreated
+[014729] DEV0 recreate begin
+[014734] DEV2 recreate begin
+[014738] DEV1 recreate begin
+[014759] DEV0 teardown tpm5 complete
+[014767] DEV0 create tpm5
+[014774] DEV1 teardown tpm2 complete
+[014777] DEV2 teardown tpm3 complete
+[014787] DEV1 create tpm3
+[014788] DEV2 create tpm2
+[014821] DEV0 ready (raw+rm)
+[014822] DEV0 recreated
+[014829] DEV0 recreate begin
+[014841] DEV2 ready (raw+rm)
+[014845] DEV2 recreated
+[014849] DEV5 recreate begin
+[014869] DEV0 teardown tpm5 complete
+[014878] DEV0 create tpm5
+[014882] DEV5 teardown tpm1 complete
+[014895] DEV1 ready (raw+rm)
+[014899] DEV1 recreated
+[014901] DEV5 create tpm1
+[014907] DEV1 recreate begin
+[014938] DEV0 ready (raw+rm)
+[014942] DEV0 recreated
+[014943] DEV1 teardown tpm3 complete
+[014948] DEV0 recreate begin
+[014955] DEV1 create tpm3
+[014965] DEV5 ready (raw+rm)
+[014968] DEV5 recreated
+[014975] client ops=704 (sample on DEV5)
+[014985] DEV0 teardown tpm5 complete
+[014993] DEV0 create tpm5
+[015011] DEV1 ready (raw+rm)
+[015013] DEV1 recreated
+[015018] DEV1 recreate begin
+[015020] DEV3 recreate begin
+[015051] DEV3 teardown tpm4 complete
+[015054] DEV0 ready (raw+rm)
+[015058] DEV0 recreated
+[015061] DEV3 create tpm3
+[015064] DEV5 recreate begin
+[015065] DEV0 recreate begin
+[015069] DEV1 teardown tpm3 complete
+[015083] DEV1 create tpm4
+[015115] DEV0 teardown tpm5 complete
+[015117] DEV5 teardown tpm1 complete
+[015124] DEV3 ready (raw+rm)
+[015125] DEV3 recreated
+[015134] DEV5 create tpm5
+[015136] DEV0 create tpm1
+[015190] DEV5 ready (raw+rm)
+[015191] DEV5 recreated
+[015192] DEV0 ready (raw+rm)
+[015195] DEV0 recreated
+[015196] DEV4 recreate begin
+[015198] DEV1 ready (raw+rm)
+[015200] DEV1 recreated
+[015204] DEV1 recreate begin
+[015217] DEV0 recreate begin
+[015241] DEV4 teardown tpm0 complete
+[015250] DEV4 create tpm0
+[015266] DEV1 teardown tpm4 complete
+[015269] DEV0 teardown tpm1 complete
+[015273] DEV1 create tpm1
+[015277] DEV0 create tpm4
+[015306] DEV4 ready (raw+rm)
+[015307] DEV4 recreated
+[015327] DEV1 ready (raw+rm)
+[015328] DEV1 recreated
+[015332] DEV0 ready (raw+rm)
+[015334] DEV0 recreated
+[015341] DEV0 recreate begin
+[015344] DEV5 recreate begin
+[015362] DEV0 teardown tpm4 complete
+[015372] DEV0 create tpm4
+[015385] DEV5 teardown tpm5 complete
+[015392] DEV5 create tpm5
+[015428] DEV0 ready (raw+rm)
+[015428] DEV0 recreated
+[015447] DEV5 ready (raw+rm)
+[015448] DEV5 recreated
+[015480] DEV1 recreate begin
+[015485] DEV5 recreate begin
+[015501] DEV1 teardown tpm1 complete
+[015506] DEV1 create tpm1
+[015517] DEV5 teardown tpm5 complete
+[015522] DEV5 create tpm5
+[015573] DEV1 ready (raw+rm)
+[015573] DEV1 recreated
+[015577] DEV5 ready (raw+rm)
+[015578] DEV5 recreated
+[015592] DEV5 recreate begin
+[015600] client ops=736 (sample on DEV3)
+[015613] DEV1 recreate begin
+[015616] DEV5 teardown tpm5 complete
+[015625] DEV5 create tpm5
+[015638] DEV1 teardown tpm1 complete
+[015646] DEV1 create tpm1
+[015685] DEV5 ready (raw+rm)
+[015686] DEV5 recreated
+[015697] DEV0 recreate begin
+[015704] DEV1 ready (raw+rm)
+[015704] DEV1 recreated
+[015726] DEV0 teardown tpm4 complete
+[015731] DEV5 recreate begin
+[015737] DEV0 create tpm4
+[015766] DEV5 teardown tpm5 complete
+[015771] DEV5 create tpm5
+[015792] DEV0 ready (raw+rm)
+[015793] DEV0 recreated
+[015796] DEV3 recreate begin
+[015802] DEV0 recreate begin
+[015818] DEV3 teardown tpm3 complete
+[015823] DEV3 create tpm3
+[015827] DEV5 ready (raw+rm)
+[015828] DEV5 recreated
+[015832] DEV0 teardown tpm4 complete
+[015845] DEV0 create tpm4
+[015881] DEV3 ready (raw+rm)
+[015882] DEV3 recreated
+[015900] DEV0 ready (raw+rm)
+[015901] DEV0 recreated
+[015901] DEV0 recreate begin
+[015907] DEV3 recreate begin
+[015921] DEV5 recreate begin
+[015925] DEV0 teardown tpm4 complete
+[015934] DEV0 create tpm4
+[015952] DEV5 teardown tpm5 complete
+[015953] DEV3 teardown tpm3 complete
+[015960] DEV3 create tpm3
+[015964] DEV5 create tpm5
+[015992] DEV0 ready (raw+rm)
+[015992] DEV0 recreated
+[016017] DEV3 ready (raw+rm)
+[016018] DEV3 recreated
+[016020] DEV5 ready (raw+rm)
+[016021] DEV5 recreated
+[016027] DEV3 recreate begin
+[016030] DEV2 recreate begin
+[016048] DEV5 recreate begin
+[016054] DEV2 teardown tpm2 complete
+[016066] DEV3 teardown tpm3 complete
+[016070] DEV2 create tpm2
+[016074] DEV5 teardown tpm5 complete
+[016076] DEV3 create tpm3
+[016084] DEV5 create tpm5
+[016127] DEV2 ready (raw+rm)
+[016128] DEV2 recreated
+[016135] DEV3 ready (raw+rm)
+[016136] DEV3 recreated
+[016140] DEV5 ready (raw+rm)
+[016141] DEV5 recreated
+[016143] DEV2 recreate begin
+[016145] client ops=768 (sample on DEV3)
+[016155] DEV5 recreate begin
+[016167] DEV2 teardown tpm2 complete
+[016173] DEV2 create tpm2
+[016177] DEV5 teardown tpm5 complete
+[016186] DEV5 create tpm5
+[016229] DEV2 ready (raw+rm)
+[016231] DEV2 recreated
+[016239] DEV2 recreate begin
+[016241] DEV5 ready (raw+rm)
+[016241] DEV5 recreated
+[016251] DEV3 recreate begin
+[016273] DEV2 teardown tpm2 complete
+[016280] DEV2 create tpm2
+[016282] DEV3 teardown tpm3 complete
+[016291] DEV3 create tpm3
+[016341] DEV2 ready (raw+rm)
+[016343] DEV2 recreated
+[016344] DEV2 recreate begin
+[016348] DEV3 ready (raw+rm)
+[016348] DEV3 recreated
+[016369] DEV2 teardown tpm2 complete
+[016371] DEV3 recreate begin
+[016376] DEV2 create tpm2
+[016398] DEV3 teardown tpm3 complete
+[016406] DEV3 create tpm3
+[016430] DEV2 ready (raw+rm)
+[016432] DEV2 recreated
+[016437] DEV5 recreate begin
+[016457] DEV5 teardown tpm5 complete
+[016459] DEV3 ready (raw+rm)
+[016460] DEV3 recreated
+[016466] DEV5 create tpm5
+[016467] DEV1 recreate begin
+[016486] DEV0 recreate begin
+[016506] DEV1 teardown tpm1 complete
+[016515] DEV1 create tpm1
+[016523] DEV5 ready (raw+rm)
+[016524] DEV5 recreated
+[016534] DEV0 teardown tpm4 complete
+[016544] DEV0 create tpm4
+[016572] DEV1 ready (raw+rm)
+[016573] DEV1 recreated
+[016577] DEV1 recreate begin
+[016594] DEV1 teardown tpm1 complete
+[016603] DEV0 ready (raw+rm)
+[016604] DEV0 recreated
+[016613] DEV1 create tpm1
+[016618] DEV5 recreate begin
+[016640] DEV5 teardown tpm5 complete
+[016644] DEV5 create tpm5
+[016669] DEV1 ready (raw+rm)
+[016671] DEV1 recreated
+[016678] DEV1 recreate begin
+[016695] DEV1 teardown tpm1 complete
+[016699] DEV5 ready (raw+rm)
+[016701] DEV5 recreated
+[016702] DEV1 create tpm1
+[016708] DEV5 recreate begin
+[016727] DEV5 teardown tpm5 complete
+[016734] DEV5 create tpm5
+[016758] DEV1 ready (raw+rm)
+[016759] DEV1 recreated
+[016760] DEV1 recreate begin
+[016787] DEV1 teardown tpm1 complete
+[016791] DEV5 ready (raw+rm)
+[016791] DEV5 recreated
+[016795] DEV1 create tpm1
+[016830] DEV5 recreate begin
+[016835] DEV3 recreate begin
+[016849] DEV1 ready (raw+rm)
+[016850] DEV1 recreated
+[016857] DEV5 teardown tpm5 complete
+[016861] DEV3 teardown tpm3 complete
+[016863] DEV5 create tpm3
+[016875] DEV3 create tpm5
+[016919] DEV5 ready (raw+rm)
+[016921] DEV5 recreated
+[016928] client ops=800 (sample on DEV5)
+[016932] DEV3 ready (raw+rm)
+[016933] DEV3 recreated
+[016937] DEV2 recreate begin
+[016946] DEV4 recreate begin
+[016951] DEV3 recreate begin
+[016977] DEV2 teardown tpm2 complete
+[016988] DEV3 teardown tpm5 complete
+[016990] DEV2 create tpm2
+[016995] DEV3 create tpm5
+[017012] DEV4 teardown tpm0 complete
+[017021] DEV4 create tpm0
+[017045] DEV2 ready (raw+rm)
+[017049] DEV2 recreated
+[017052] DEV3 ready (raw+rm)
+[017053] DEV3 recreated
+[017059] DEV3 recreate begin
+[017075] DEV4 ready (raw+rm)
+[017082] DEV4 recreated
+[017085] DEV5 recreate begin
+[017088] DEV3 teardown tpm5 complete
+[017094] DEV3 create tpm5
+[017104] DEV5 teardown tpm3 complete
+[017110] DEV5 create tpm3
+[017150] DEV3 ready (raw+rm)
+[017151] DEV3 recreated
+[017154] DEV0 recreate begin
+[017169] DEV5 ready (raw+rm)
+[017169] DEV5 recreated
+[017176] DEV0 teardown tpm4 complete
+[017180] DEV0 create tpm4
+[017181] DEV2 recreate begin
+[017199] DEV2 teardown tpm2 complete
+[017203] DEV2 create tpm2
+[017234] DEV0 ready (raw+rm)
+[017235] DEV0 recreated
+[017264] DEV2 ready (raw+rm)
+[017265] DEV2 recreated
+[017270] DEV1 recreate begin
+[017280] DEV0 recreate begin
+[017287] DEV2 recreate begin
+[017295] DEV5 recreate begin
+[017336] DEV0 teardown tpm4 complete
+[017340] DEV1 teardown tpm1 complete
+[017351] DEV1 create tpm4
+[017355] DEV0 create tpm1
+[017367] DEV2 teardown tpm2 complete
+[017388] DEV2 create tpm2
+[017390] DEV5 teardown tpm3 complete
+[017409] DEV5 create tpm3
+[017422] DEV0 ready (raw+rm)
+[017423] DEV0 recreated
+[017449] DEV2 ready (raw+rm)
+[017452] DEV2 recreated
+[017458] DEV1 ready (raw+rm)
+[017459] DEV1 recreated
+[017466] DEV5 ready (raw+rm)
+[017467] DEV5 recreated
+[017471] DEV0 recreate begin
+[017480] DEV4 recreate begin
+[017510] DEV0 teardown tpm1 complete
+[017519] DEV4 teardown tpm0 complete
+[017521] DEV0 create tpm1
+[017534] DEV4 create tpm0
+[017578] DEV0 ready (raw+rm)
+[017580] DEV0 recreated
+[017591] DEV4 ready (raw+rm)
+[017591] DEV4 recreated
+[017603] DEV4 recreate begin
+[017608] DEV3 recreate begin
+[017610] client ops=832 (sample on DEV0)
+[017626] DEV4 teardown tpm0 complete
+[017634] DEV4 create tpm0
+[017638] DEV3 teardown tpm5 complete
+[017643] DEV3 create tpm5
+[017689] DEV4 ready (raw+rm)
+[017690] DEV4 recreated
+[017694] DEV1 recreate begin
+[017697] DEV3 ready (raw+rm)
+[017698] DEV3 recreated
+[017700] DEV3 recreate begin
+[017721] DEV3 teardown tpm5 complete
+[017725] DEV1 teardown tpm4 complete
+[017730] DEV3 create tpm4
+[017735] DEV1 create tpm5
+[017788] DEV3 ready (raw+rm)
+[017790] DEV3 recreated
+[017791] DEV1 ready (raw+rm)
+[017792] DEV1 recreated
+[017802] DEV5 recreate begin
+[017803] DEV4 recreate begin
+[017827] DEV4 teardown tpm0 complete
+[017831] DEV5 teardown tpm3 complete
+[017834] DEV4 create tpm0
+[017840] DEV5 create tpm3
+[017843] DEV3 recreate begin
+[017871] DEV3 teardown tpm4 complete
+[017880] DEV3 create tpm4
+[017886] DEV4 ready (raw+rm)
+[017887] DEV4 recreated
+[017899] DEV5 ready (raw+rm)
+[017902] DEV5 recreated
+[017906] DEV1 recreate begin
+[017928] DEV1 teardown tpm5 complete
+[017934] DEV3 ready (raw+rm)
+[017934] DEV3 recreated
+[017937] DEV1 create tpm5
+[017939] DEV2 recreate begin
+[017948] DEV0 recreate begin
+[   31.092725] tpm tpm1: Operation Canceled
+[017972] DEV3 recreate begin
+[017997] DEV0 teardown tpm1 complete
+[018002] DEV2 teardown tpm2 complete
+[018012] DEV0 create tpm1
+[018025] DEV3 teardown tpm4 complete
+[018032] DEV2 create tpm2
+[018039] DEV3 create tpm4
+[018056] DEV1 ready (raw+rm)
+[018056] DEV1 recreated
+[018067] DEV0 ready (raw+rm)
+[018068] DEV0 recreated
+[018072] DEV1 recreate begin
+[018091] DEV2 ready (raw+rm)
+[018093] DEV2 recreated
+[018094] DEV3 ready (raw+rm)
+[018094] DEV3 recreated
+[018098] DEV1 teardown tpm5 complete
+[018106] DEV1 create tpm5
+[018110] DEV4 recreate begin
+[018149] DEV4 teardown tpm0 complete
+[018153] DEV4 create tpm0
+[018161] DEV1 ready (raw+rm)
+[018163] DEV1 recreated
+[018174] DEV3 recreate begin
+[018202] DEV3 teardown tpm4 complete
+[018205] DEV0 recreate begin
+[018210] DEV3 create tpm4
+[018212] DEV4 ready (raw+rm)
+[018217] DEV4 recreated
+[018243] DEV0 teardown tpm1 complete
+[018252] client ops=864 (sample on DEV4)
+[018253] DEV0 create tpm1
+[018268] DEV3 ready (raw+rm)
+[018269] DEV3 recreated
+[018309] DEV0 ready (raw+rm)
+[018311] DEV0 recreated
+[018327] DEV5 recreate begin
+[018341] DEV1 recreate begin
+[018365] DEV5 teardown tpm3 complete
+[018374] DEV5 create tpm3
+[018377] DEV1 teardown tpm5 complete
+[018387] DEV1 create tpm5
+[018433] DEV5 ready (raw+rm)
+[018434] DEV5 recreated
+[018439] DEV0 recreate begin
+[018444] DEV1 ready (raw+rm)
+[018449] DEV1 recreated
+[018458] DEV2 recreate begin
+[018485] DEV0 teardown tpm1 complete
+[018489] DEV3 recreate begin
+[018492] DEV0 create tpm1
+[018497] DEV2 teardown tpm2 complete
+[018506] DEV2 create tpm2
+[018523] DEV3 teardown tpm4 complete
+[018528] DEV3 create tpm4
+[018547] DEV0 ready (raw+rm)
+[018550] DEV0 recreated
+[018564] DEV2 ready (raw+rm)
+[018569] DEV2 recreated
+[018581] DEV0 recreate begin
+[018585] DEV3 ready (raw+rm)
+[018587] DEV3 recreated
+[018590] DEV3 recreate begin
+[018619] DEV0 teardown tpm1 complete
+[018623] DEV3 teardown tpm4 complete
+[018626] DEV0 create tpm1
+[018635] DEV3 create tpm4
+[018684] DEV0 ready (raw+rm)
+[018685] DEV0 recreated
+[018691] DEV3 ready (raw+rm)
+[018692] DEV3 recreated
+[018694] DEV3 recreate begin
+[018698] DEV4 recreate begin
+[018708] client ops=896 (sample on DEV2)
+[018733] DEV3 teardown tpm4 complete
+[018736] DEV4 teardown tpm0 complete
+[018743] DEV4 create tpm4
+[018746] DEV3 create tpm0
+[018800] DEV4 ready (raw+rm)
+[018801] DEV4 recreated
+[018803] DEV3 ready (raw+rm)
+[018803] DEV3 recreated
+[018815] DEV0 recreate begin
+[018835] DEV0 teardown tpm1 complete
+[018841] DEV1 recreate begin
+[018842] DEV3 recreate begin
+[018851] DEV0 create tpm1
+[018885] DEV3 teardown tpm0 complete
+[018886] DEV1 teardown tpm5 complete
+[018891] DEV3 create tpm0
+[018900] DEV1 create tpm5
+[018907] DEV0 ready (raw+rm)
+[018909] DEV0 recreated
+[018929] DEV5 recreate begin
+[018946] DEV3 ready (raw+rm)
+[018948] DEV3 recreated
+[018954] DEV1 ready (raw+rm)
+[018956] DEV1 recreated
+[018958] DEV5 teardown tpm3 complete
+[018960] DEV1 recreate begin
+[018965] DEV0 recreate begin
+[018972] DEV5 create tpm3
+[019004] DEV1 teardown tpm5 complete
+[019010] DEV0 teardown tpm1 complete
+[019014] DEV1 create tpm5
+[019024] DEV0 create tpm1
+[019029] DEV5 ready (raw+rm)
+[019034] DEV5 recreated
+[019073] DEV1 ready (raw+rm)
+[019074] DEV1 recreated
+[019079] DEV2 recreate begin
+[019083] DEV0 ready (raw+rm)
+[019086] DEV0 recreated
+[019110] DEV5 recreate begin
+[019130] DEV2 teardown tpm2 complete
+[019139] DEV5 teardown tpm3 complete
+[019140] DEV2 create tpm2
+[019158] DEV5 create tpm3
+[019196] DEV2 ready (raw+rm)
+[019199] DEV2 recreated
+[019205] DEV4 recreate begin
+[019217] DEV5 ready (raw+rm)
+[019220] DEV5 recreated
+[019221] DEV1 recreate begin
+[019223] DEV2 recreate begin
+[019255] DEV1 teardown tpm5 complete
+[019258] DEV4 teardown tpm4 complete
+[019267] DEV1 create tpm4
+[019277] DEV4 create tpm5
+[019289] DEV2 teardown tpm2 complete
+[019303] DEV2 create tpm2
+[019330] DEV1 ready (raw+rm)
+[019332] DEV1 recreated
+[019338] DEV4 ready (raw+rm)
+[019339] DEV4 recreated
+[019341] DEV4 recreate begin
+[019348] DEV5 recreate begin
+[019366] DEV2 ready (raw+rm)
+[019366] DEV2 recreated
+[019368] DEV4 teardown tpm5 complete
+[019372] DEV5 teardown tpm3 complete
+[019374] DEV4 create tpm5
+[019381] DEV5 create tpm3
+[019437] DEV5 ready (raw+rm)
+[019438] DEV5 recreated
+[019440] DEV4 ready (raw+rm)
+[019441] DEV4 recreated
+[019457] client ops=928 (sample on DEV1)
+[019459] DEV1 recreate begin
+[019463] DEV2 recreate begin
+[019473] DEV0 recreate begin
+[019504] DEV2 teardown tpm2 complete
+[019511] DEV2 create tpm2
+[019525] DEV0 teardown tpm1 complete
+[019529] DEV0 create tpm1
+[019537] DEV1 teardown tpm4 complete
+[019548] DEV1 create tpm4
+[019569] DEV2 ready (raw+rm)
+[019570] DEV2 recreated
+[019603] DEV1 ready (raw+rm)
+[019604] DEV1 recreated
+[019605] DEV0 ready (raw+rm)
+[019606] DEV0 recreated
+[019608] DEV1 recreate begin
+[019611] DEV4 recreate begin
+[019637] DEV1 teardown tpm4 complete
+[019642] DEV4 teardown tpm5 complete
+[019650] DEV1 create tpm4
+[019655] DEV4 create tpm5
+[019664] DEV5 recreate begin
+[019682] DEV2 recreate begin
+[019690] DEV5 teardown tpm3 complete
+[019694] DEV5 create tpm3
+[019709] DEV1 ready (raw+rm)
+[019710] DEV1 recreated
+[019715] DEV4 ready (raw+rm)
+[019715] DEV4 recreated
+[019715] DEV2 teardown tpm2 complete
+[019718] DEV1 recreate begin
+[019723] DEV2 create tpm2
+[019743] DEV1 teardown tpm4 complete
+[019749] DEV1 create tpm4
+[019751] DEV5 ready (raw+rm)
+[019753] DEV5 recreated
+[019764] DEV5 recreate begin
+[019780] DEV2 ready (raw+rm)
+[019781] DEV2 recreated
+[019786] DEV2 recreate begin
+[019789] DEV5 teardown tpm3 complete
+[019793] DEV5 create tpm3
+[019802] DEV1 ready (raw+rm)
+[019802] DEV1 recreated
+[019818] DEV2 teardown tpm2 complete
+[019822] DEV0 recreate begin
+[019832] DEV2 create tpm2
+[019844] DEV0 teardown tpm1 complete
+[019850] DEV5 ready (raw+rm)
+[019852] DEV5 recreated
+[019859] DEV0 create tpm1
+[019886] DEV2 ready (raw+rm)
+[019886] DEV2 recreated
+[019896] DEV1 recreate begin
+[019916] DEV0 ready (raw+rm)
+[019918] DEV0 recreated
+[019922] DEV1 teardown tpm4 complete
+[019929] DEV1 create tpm4
+[019945] DEV2 recreate begin
+[019978] DEV2 teardown tpm2 complete
+[019984] DEV1 ready (raw+rm)
+[019985] DEV1 recreated
+[019986] DEV1 recreate begin
+[019988] DEV2 create tpm2
+[019991] DEV5 recreate begin
+[020019] DEV1 teardown tpm4 complete
+[020025] DEV1 create tpm4
+[020032] DEV5 teardown tpm3 complete
+[020039] DEV5 create tpm3
+[020041] DEV2 ready (raw+rm)
+[020042] DEV2 recreated
+[020081] DEV1 ready (raw+rm)
+[020082] DEV1 recreated
+[020096] DEV5 ready (raw+rm)
+[020098] DEV1 recreate begin
+[020100] DEV5 recreated
+[020109] client ops=960 (sample on DEV3)
+[020135] DEV5 recreate begin
+[020137] DEV1 teardown tpm4 complete
+[020150] DEV1 create tpm4
+[020169] DEV5 teardown tpm3 complete
+[020179] DEV5 create tpm3
+[020208] DEV1 ready (raw+rm)
+[020209] DEV1 recreated
+[020224] DEV3 recreate begin
+[020240] DEV5 ready (raw+rm)
+[020241] DEV5 recreated
+[020253] DEV5 recreate begin
+[020256] DEV1 recreate begin
+[020275] DEV3 teardown tpm0 complete
+[020284] DEV3 create tpm0
+[020291] DEV1 teardown tpm4 complete
+[020302] DEV5 teardown tpm3 complete
+[020308] DEV1 create tpm3
+[020325] DEV5 create tpm4
+[020337] DEV3 ready (raw+rm)
+[020338] DEV3 recreated
+[020371] DEV1 ready (raw+rm)
+[020371] DEV1 recreated
+[020381] DEV5 ready (raw+rm)
+[020381] DEV5 recreated
+[020385] DEV4 recreate begin
+[020391] DEV2 recreate begin
+[020415] DEV4 teardown tpm5 complete
+[020419] DEV1 recreate begin
+[020423] DEV4 create tpm5
+[020425] DEV2 teardown tpm2 complete
+[020436] DEV2 create tpm2
+[020458] DEV1 teardown tpm3 complete
+[020466] DEV1 create tpm3
+[020482] DEV4 ready (raw+rm)
+[020483] DEV4 recreated
+[020492] DEV2 ready (raw+rm)
+[020493] DEV2 recreated
+[020507] DEV5 recreate begin
+[020513] DEV3 recreate begin
+[020525] DEV1 ready (raw+rm)
+[020529] DEV1 recreated
+[020530] DEV1 recreate begin
+[020546] DEV5 teardown tpm4 complete
+[020549] DEV3 teardown tpm0 complete
+[020559] DEV3 create tpm4
+[020565] DEV5 create tpm0
+[020576] DEV1 teardown tpm3 complete
+[020587] DEV1 create tpm3
+[020621] DEV3 ready (raw+rm)
+[020623] DEV3 recreated
+[020625] DEV5 ready (raw+rm)
+[020631] DEV5 recreated
+[020642] client ops=992 (sample on DEV0)
+[020645] DEV1 ready (raw+rm)
+[020646] DEV1 recreated
+[020657] DEV1 recreate begin
+[020689] DEV0 recreate begin
+[020695] DEV2 recreate begin
+[020699] DEV1 teardown tpm3 complete
+[020704] DEV1 create tpm3
+[020740] DEV2 teardown tpm2 complete
+[020751] DEV2 create tpm2
+[020758] DEV1 ready (raw+rm)
+[020766] DEV1 recreated
+[020770] DEV0 teardown tpm1 complete
+[020783] DEV0 create tpm1
+[020807] DEV2 ready (raw+rm)
+[020808] DEV2 recreated
+[020810] DEV2 recreate begin
+[020814] DEV3 recreate begin
+[020840] DEV2 teardown tpm2 complete
+[020841] DEV0 ready (raw+rm)
+[020842] DEV0 recreated
+[020845] DEV3 teardown tpm4 complete
+[020854] DEV0 recreate begin
+[020855] DEV2 create tpm2
+[020862] DEV3 create tpm4
+[020898] DEV0 teardown tpm1 complete
+[020908] DEV0 create tpm1
+[020915] DEV2 ready (raw+rm)
+[020917] DEV2 recreated
+[020919] DEV3 ready (raw+rm)
+[020919] DEV3 recreated
+[020936] DEV1 recreate begin
+[020954] DEV5 recreate begin
+[020960] DEV1 teardown tpm3 complete
+[020965] DEV0 ready (raw+rm)
+[020968] DEV0 recreated
+[020973] DEV1 create tpm3
+[020978] DEV5 teardown tpm0 complete
+[020987] DEV2 recreate begin
+[020992] DEV5 create tpm0
+[021026] DEV2 teardown tpm2 complete
+[021036] DEV2 create tpm2
+[021038] DEV1 ready (raw+rm)
+[021038] DEV1 recreated
+[021050] DEV5 ready (raw+rm)
+[021053] DEV5 recreated
+[021060] DEV1 recreate begin
+[021080] DEV1 teardown tpm3 complete
+[021088] DEV1 create tpm3
+[021093] DEV2 ready (raw+rm)
+[021095] DEV2 recreated
+[021098] DEV2 recreate begin
+[021123] DEV2 teardown tpm2 complete
+[021133] DEV2 create tpm2
+[021145] DEV1 ready (raw+rm)
+[021147] DEV1 recreated
+[021159] DEV5 recreate begin
+[021184] DEV5 teardown tpm0 complete
+[021189] DEV2 ready (raw+rm)
+[021190] DEV2 recreated
+[021191] DEV5 create tpm0
+[021200] DEV2 recreate begin
+[021204] DEV1 recreate begin
+[021207] DEV4 recreate begin
+[021235] DEV2 teardown tpm2 complete
+[021245] DEV2 create tpm2
+[021256] DEV1 teardown tpm3 complete
+[021268] DEV4 teardown tpm5 complete
+[021271] DEV1 create tpm3
+[021279] DEV4 create tpm5
+[021306] DEV5 ready (raw+rm)
+[021309] DEV5 recreated
+[021311] DEV2 ready (raw+rm)
+[021312] DEV2 recreated
+[021317] DEV3 recreate begin
+[021334] DEV1 ready (raw+rm)
+[021338] DEV1 recreated
+[021343] DEV4 ready (raw+rm)
+[021345] DEV4 recreated
+[021349] DEV4 recreate begin
+[021356] DEV3 teardown tpm4 complete
+[021369] DEV3 create tpm4
+[021371] client ops=1024 (sample on DEV5)
+[021392] DEV4 teardown tpm5 complete
+[021399] DEV4 create tpm5
+[021421] DEV3 ready (raw+rm)
+[021422] DEV3 recreated
+[021426] DEV0 recreate begin
+[021435] DEV3 recreate begin
+[021443] DEV1 recreate begin
+[021454] DEV4 ready (raw+rm)
+[021456] DEV4 recreated
+[021476] DEV5 recreate begin
+[021487] DEV0 teardown tpm1 complete
+[021490] DEV3 teardown tpm4 complete
+[021502] DEV1 teardown tpm3 complete
+[021506] DEV0 create tpm1
+[021513] DEV3 create tpm3
+[021519] DEV1 create tpm4
+[021555] DEV5 teardown tpm0 complete
+[021564] DEV0 ready (raw+rm)
+[021569] DEV5 create tpm0
+[021570] DEV0 recreated
+[021579] DEV3 ready (raw+rm)
+[021580] DEV3 recreated
+[021585] DEV1 ready (raw+rm)
+[021587] DEV1 recreated
+[021590] DEV1 recreate begin
+[021624] DEV5 ready (raw+rm)
+[021628] DEV5 recreated
+[021629] DEV1 teardown tpm4 complete
+[021638] DEV1 create tpm4
+[021646] DEV0 recreate begin
+[021655] DEV4 recreate begin
+[021685] DEV0 teardown tpm1 complete
+[021695] DEV1 ready (raw+rm)
+[021700] DEV1 recreated
+[021701] DEV4 teardown tpm5 complete
+[021702] DEV1 recreate begin
+[021703] DEV0 create tpm1
+[021709] DEV3 recreate begin
+[021719] DEV4 create tpm5
+[021742] DEV1 teardown tpm4 complete
+[021757] DEV1 create tpm4
+[021762] DEV0 ready (raw+rm)
+[021764] DEV0 recreated
+[021769] DEV3 teardown tpm3 complete
+[021783] DEV3 create tpm3
+[021817] DEV1 ready (raw+rm)
+[021818] DEV1 recreated
+[021835] DEV4 ready (raw+rm)
+[021837] DEV4 recreated
+[021838] DEV3 ready (raw+rm)
+[021839] DEV3 recreated
+[021841] DEV3 recreate begin
+[021862] DEV3 teardown tpm3 complete
+[021874] DEV3 create tpm3
+[021896] DEV1 recreate begin
+[021921] DEV1 teardown tpm4 complete
+[021929] DEV3 ready (raw+rm)
+[021930] DEV3 recreated
+[021936] DEV1 create tpm4
+[021940] DEV2 recreate begin
+[021972] DEV2 teardown tpm2 complete
+[021978] DEV2 create tpm2
+[021992] DEV1 ready (raw+rm)
+[021993] DEV1 recreated
+[021997] DEV4 recreate begin
+[022022] DEV4 teardown tpm5 complete
+[022031] DEV4 create tpm5
+[022034] DEV2 ready (raw+rm)
+[022035] DEV2 recreated
+[022036] DEV2 recreate begin
+[022063] DEV2 teardown tpm2 complete
+[022074] DEV2 create tpm2
+[022086] DEV4 ready (raw+rm)
+[022089] DEV4 recreated
+[022102] DEV0 recreate begin
+[022110] DEV5 recreate begin
+[022124] DEV0 teardown tpm1 complete
+[022131] DEV0 create tpm1
+[022135] DEV2 ready (raw+rm)
+[022135] DEV2 recreated
+[022137] DEV5 teardown tpm0 complete
+[022143] client ops=1056 (sample on DEV2)
+[022147] DEV5 create tpm0
+[022183] DEV3 recreate begin
+[022186] DEV0 ready (raw+rm)
+[022187] DEV0 recreated
+[022207] DEV5 ready (raw+rm)
+[022209] DEV5 recreated
+[022214] DEV0 recreate begin
+[022214] DEV3 teardown tpm3 complete
+[022235] DEV3 create tpm3
+[022238] DEV0 teardown tpm1 complete
+[022247] DEV0 create tpm1
+[022292] DEV3 ready (raw+rm)
+[022293] DEV3 recreated
+[022303] DEV0 ready (raw+rm)
+[022304] DEV0 recreated
+[022314] DEV0 recreate begin
+[022320] DEV2 recreate begin
+[022345] DEV0 teardown tpm1 complete
+[022349] DEV2 teardown tpm2 complete
+[022354] DEV2 create tpm2
+[022355] DEV0 create tpm1
+[022411] DEV2 ready (raw+rm)
+[022412] DEV2 recreated
+[022414] DEV2 recreate begin
+[022415] DEV0 ready (raw+rm)
+[022418] DEV0 recreated
+[022421] DEV4 recreate begin
+[022454] DEV4 teardown tpm5 complete
+[022458] DEV2 teardown tpm2 complete
+[022464] DEV2 create tpm5
+[022472] DEV4 create tpm2
+[022531] DEV2 ready (raw+rm)
+[022534] DEV2 recreated
+[022537] DEV4 ready (raw+rm)
+[022540] DEV4 recreated
+[022545] DEV2 recreate begin
+[022577] DEV2 teardown tpm5 complete
+[022588] DEV2 create tpm5
+[022647] DEV2 ready (raw+rm)
+[022648] DEV2 recreated
+[022651] DEV2 recreate begin
+[022653] DEV1 recreate begin
+[022688] DEV2 teardown tpm5 complete
+[022702] DEV2 create tpm5
+[022707] DEV1 teardown tpm4 complete
+[022722] DEV1 create tpm4
+[022755] DEV2 ready (raw+rm)
+[022757] DEV2 recreated
+[022766] DEV5 recreate begin
+[022770] DEV3 recreate begin
+[   35.913856] tpm tpm3: Operation Canceled
+[022783] DEV1 ready (raw+rm)
+[022786] DEV1 recreated
+[022805] DEV4 recreate begin
+[022835] DEV5 teardown tpm0 complete
+[022844] DEV3 teardown tpm3 complete
+[022858] DEV3 create tpm2
+[022858] DEV4 teardown tpm2 complete
+[022867] DEV5 create tpm0
+[022886] DEV4 create tpm3
+[022913] DEV3 ready (raw+rm)
+[022914] DEV3 recreated
+[022918] DEV2 recreate begin
+[022931] DEV5 ready (raw+rm)
+[022932] DEV5 recreated
+[022941] DEV4 ready (raw+rm)
+[022946] DEV4 recreated
+[022949] DEV2 teardown tpm5 complete
+[022950] DEV0 recreate begin
+[022953] DEV2 create tpm5
+[022992] DEV0 teardown tpm1 complete
+[022999] DEV0 create tpm1
+[023008] DEV2 ready (raw+rm)
+[023011] DEV2 recreated
+[023050] client ops=1088 (sample on DEV5)
+[023054] DEV0 ready (raw+rm)
+[023056] DEV0 recreated
+[023058] DEV1 recreate begin
+[023081] DEV4 recreate begin
+[023097] DEV1 teardown tpm4 complete
+[023107] DEV4 teardown tpm3 complete
+[023114] DEV5 recreate begin
+[023116] DEV4 create tpm3
+[023130] DEV1 create tpm4
+[023140] DEV5 teardown tpm0 complete
+[023149] DEV5 create tpm0
+[023173] DEV4 ready (raw+rm)
+[023174] DEV4 recreated
+[023191] DEV1 ready (raw+rm)
+[023194] DEV1 recreated
+[023205] DEV1 recreate begin
+[023209] DEV5 ready (raw+rm)
+[023211] DEV5 recreated
+[023236] DEV1 teardown tpm4 complete
+[023259] DEV1 create tpm4
+[023315] DEV1 ready (raw+rm)
+[023315] DEV1 recreated
+[023326] DEV3 recreate begin
+[023332] DEV1 recreate begin
+[023360] DEV3 teardown tpm2 complete
+[023366] DEV1 teardown tpm4 complete
+[023369] DEV3 create tpm2
+[023377] DEV1 create tpm4
+[023424] DEV3 ready (raw+rm)
+[023425] DEV3 recreated
+[023432] DEV1 ready (raw+rm)
+[023435] DEV1 recreated
+[023456] DEV0 recreate begin
+[023466] DEV3 recreate begin
+[023495] DEV0 teardown tpm1 complete
+[023501] DEV0 create tpm1
+[023503] DEV3 teardown tpm2 complete
+[023511] DEV3 create tpm2
+[023559] DEV0 ready (raw+rm)
+[023560] DEV0 recreated
+[023567] DEV3 ready (raw+rm)
+[023568] DEV3 recreated
+[023569] client ops=1120 (sample on DEV2)
+[023606] DEV0 recreate begin
+[023620] DEV1 recreate begin
+[023653] DEV0 teardown tpm1 complete
+[023665] DEV0 create tpm1
+[023667] DEV1 teardown tpm4 complete
+[023671] DEV5 recreate begin
+[023683] DEV1 create tpm4
+[023704] DEV5 teardown tpm0 complete
+[023713] DEV5 create tpm0
+[023719] DEV0 ready (raw+rm)
+[023720] DEV0 recreated
+[023741] DEV1 ready (raw+rm)
+[023745] DEV1 recreated
+[023765] DEV4 recreate begin
+[023768] DEV5 ready (raw+rm)
+[023769] DEV5 recreated
+[023773] DEV3 recreate begin
+[023804] DEV4 teardown tpm3 complete
+[023812] DEV3 teardown tpm2 complete
+[023816] DEV5 recreate begin
+[023822] DEV4 create tpm2
+[023835] DEV3 create tpm3
+[023871] DEV5 teardown tpm0 complete
+[023883] DEV5 create tpm0
+[023887] DEV4 ready (raw+rm)
+[023888] DEV4 recreated
+[023891] DEV3 ready (raw+rm)
+[023892] DEV3 recreated
+[023897] DEV4 recreate begin
+[023907] DEV3 recreate begin
+[023932] DEV4 teardown tpm2 complete
+[023939] DEV4 create tpm2
+[023950] DEV5 ready (raw+rm)
+[023951] DEV5 recreated
+[023957] DEV3 teardown tpm3 complete
+[023966] DEV3 create tpm3
+[024028] DEV3 ready (raw+rm)
+[024038] DEV3 recreated
+[024039] DEV4 ready (raw+rm)
+[024040] DEV4 recreated
+[024047] client ops=1152 (sample on DEV3)
+[024050] DEV3 recreate begin
+[024052] DEV4 recreate begin
+[024057] DEV2 recreate begin
+[024105] DEV3 teardown tpm3 complete
+[024109] DEV2 teardown tpm5 complete
+[024117] DEV3 create tpm2
+[024120] DEV4 teardown tpm2 complete
+[024134] DEV2 create tpm3
+[024136] DEV4 create tpm5
+[024150] DEV0 recreate begin
+[024169] DEV3 ready (raw+rm)
+[024171] DEV3 recreated
+[024187] DEV2 ready (raw+rm)
+[024188] DEV2 recreated
+[024194] DEV1 recreate begin
+[024198] DEV0 teardown tpm1 complete
+[024217] DEV0 create tpm1
+[024247] DEV4 ready (raw+rm)
+[024249] DEV4 recreated
+[024255] DEV1 teardown tpm4 complete
+[024262] DEV1 create tpm4
+[024296] DEV0 ready (raw+rm)
+[024297] DEV0 recreated
+[024309] DEV2 recreate begin
+[024327] DEV1 ready (raw+rm)
+[024328] DEV1 recreated
+[024331] DEV2 teardown tpm3 complete
+[024338] DEV1 recreate begin
+[024344] DEV2 create tpm3
+[024355] DEV0 recreate begin
+[024374] DEV1 teardown tpm4 complete
+[024384] DEV0 teardown tpm1 complete
+[024386] DEV1 create tpm4
+[024391] DEV0 create tpm1
+[024403] DEV2 ready (raw+rm)
+[024408] DEV2 recreated
+[024440] DEV1 ready (raw+rm)
+[024445] DEV1 recreated
+[024446] DEV5 recreate begin
+[024448] DEV0 ready (raw+rm)
+[024450] DEV0 recreated
+[024454] DEV1 recreate begin
+[024483] DEV0 recreate begin
+[024497] DEV1 teardown tpm4 complete
+[024517] DEV1 create tpm0
+[024526] DEV5 teardown tpm0 complete
+[024540] DEV5 create tpm4
+[024556] DEV0 teardown tpm1 complete
+[024570] DEV0 create tpm1
+[024574] DEV1 ready (raw+rm)
+[024580] DEV1 recreated
+[024582] DEV3 recreate begin
+[024603] DEV5 ready (raw+rm)
+[024605] DEV5 recreated
+[024609] DEV2 recreate begin
+[024618] DEV3 teardown tpm2 complete
+[024625] DEV0 ready (raw+rm)
+[024627] DEV0 recreated
+[024631] DEV3 create tpm2
+[024647] DEV2 teardown tpm3 complete
+[024655] DEV2 create tpm3
+[024685] DEV3 ready (raw+rm)
+[024686] DEV3 recreated
+[024687] DEV3 recreate begin
+[024708] DEV2 ready (raw+rm)
+[024710] DEV2 recreated
+[024716] DEV4 recreate begin
+[024717] DEV0 recreate begin
+[024719] DEV3 teardown tpm2 complete
+[024736] DEV3 create tpm2
+[024761] DEV0 teardown tpm1 complete
+[024768] DEV4 teardown tpm5 complete
+[024777] DEV0 create tpm1
+[024778] DEV4 create tpm5
+[024791] DEV3 ready (raw+rm)
+[024799] DEV3 recreated
+[024816] client ops=1184 (sample on DEV2)
+[024831] DEV0 ready (raw+rm)
+[024832] DEV0 recreated
+[024836] DEV1 recreate begin
+[024840] DEV4 ready (raw+rm)
+[024843] DEV4 recreated
+[024878] DEV1 teardown tpm0 complete
+[024880] DEV2 recreate begin
+[024887] DEV1 create tpm0
+[024900] DEV2 teardown tpm3 complete
+[024905] DEV2 create tpm3
+[024945] DEV1 ready (raw+rm)
+[024946] DEV1 recreated
+[024960] DEV2 ready (raw+rm)
+[024961] DEV2 recreated
+[024968] DEV1 recreate begin
+[024985] DEV2 recreate begin
+[024991] DEV1 teardown tpm0 complete
+[024998] DEV1 create tpm0
+[025007] DEV2 teardown tpm3 complete
+[025012] DEV2 create tpm3
+[025055] DEV1 ready (raw+rm)
+[025056] DEV1 recreated
+[025060] DEV4 recreate begin
+[025065] DEV2 ready (raw+rm)
+[025065] DEV2 recreated
+[025070] DEV3 recreate begin
+[025079] DEV4 teardown tpm5 complete
+[025085] DEV4 create tpm5
+[025089] DEV3 teardown tpm2 complete
+[025100] DEV3 create tpm2
+[025143] DEV4 ready (raw+rm)
+[025144] DEV4 recreated
+[025146] DEV4 recreate begin
+[025159] DEV3 ready (raw+rm)
+[025159] DEV3 recreated
+[025171] DEV4 teardown tpm5 complete
+[025179] DEV4 create tpm5
+[025232] DEV4 ready (raw+rm)
+[025233] DEV4 recreated
+[025242] DEV4 recreate begin
+[025245] DEV5 recreate begin
+[025270] DEV4 teardown tpm5 complete
+[025279] DEV4 create tpm5
+[025285] DEV5 teardown tpm4 complete
+[025294] DEV5 create tpm4
+[025345] DEV4 ready (raw+rm)
+[025346] DEV4 recreated
+[025351] DEV5 ready (raw+rm)
+[025352] DEV5 recreated
+[025358] DEV3 recreate begin
+[025382] DEV3 teardown tpm2 complete
+[025395] DEV3 create tpm2
+[025400] DEV1 recreate begin
+[025415] DEV5 recreate begin
+[025428] DEV1 teardown tpm0 complete
+[025434] DEV1 create tpm0
+[025442] DEV5 teardown tpm4 complete
+[025450] DEV5 create tpm4
+[025454] DEV3 ready (raw+rm)
+[025455] DEV3 recreated
+[025460] DEV3 recreate begin
+[025489] DEV1 ready (raw+rm)
+[025490] DEV1 recreated
+[025492] DEV3 teardown tpm2 complete
+[025494] DEV1 recreate begin
+[025502] DEV3 create tpm2
+[025510] DEV5 ready (raw+rm)
+[025514] DEV5 recreated
+[025518] DEV5 recreate begin
+[025525] DEV1 teardown tpm0 complete
+[025532] client ops=1216 (sample on DEV2)
+[025539] DEV4 recreate begin
+[025543] DEV1 create tpm0
+[025559] DEV3 ready (raw+rm)
+[025559] DEV3 recreated
+[025566] DEV2 recreate begin
+[025579] DEV5 teardown tpm4 complete
+[025586] DEV5 create tpm4
+[025596] DEV4 teardown tpm5 complete
+[025603] DEV1 ready (raw+rm)
+[025603] DEV1 recreated
+[025613] DEV2 teardown tpm3 complete
+[025619] DEV2 create tpm3
+[025621] DEV4 create tpm5
+[025642] DEV5 ready (raw+rm)
+[025644] DEV5 recreated
+[025648] DEV5 recreate begin
+[025668] DEV5 teardown tpm4 complete
+[025673] DEV5 create tpm4
+[025678] DEV2 ready (raw+rm)
+[025678] DEV2 recreated
+[025680] DEV4 ready (raw+rm)
+[025681] DEV4 recreated
+[025684] DEV4 recreate begin
+[025704] DEV4 teardown tpm5 complete
+[025709] DEV4 create tpm5
+[025729] DEV5 ready (raw+rm)
+[025729] DEV5 recreated
+[025744] DEV2 recreate begin
+[025751] DEV5 recreate begin
+[025764] DEV4 ready (raw+rm)
+[025768] DEV4 recreated
+[025781] DEV2 teardown tpm3 complete
+[025788] DEV2 create tpm3
+[025797] DEV5 teardown tpm4 complete
+[025803] DEV4 recreate begin
+[025814] DEV5 create tpm4
+[025825] DEV4 teardown tpm5 complete
+[025834] DEV4 create tpm5
+[025842] DEV2 ready (raw+rm)
+[025845] DEV2 recreated
+[025867] DEV5 ready (raw+rm)
+[025867] DEV5 recreated
+[025888] DEV1 recreate begin
+[025890] DEV4 ready (raw+rm)
+[025891] DEV4 recreated
+[025894] DEV5 recreate begin
+[025898] DEV3 recreate begin
+[025917] DEV1 teardown tpm0 complete
+[025924] DEV1 create tpm0
+[025937] DEV3 teardown tpm2 complete
+[025942] DEV5 teardown tpm4 complete
+[025944] DEV3 create tpm2
+[025951] DEV5 create tpm4
+[025982] DEV1 ready (raw+rm)
+[025983] DEV1 recreated
+[025998] DEV3 ready (raw+rm)
+[025999] DEV3 recreated
+[026006] DEV5 ready (raw+rm)
+[026008] DEV5 recreated
+[026029] DEV1 recreate begin
+[026032] DEV5 recreate begin
+[026051] DEV1 teardown tpm0 complete
+[026055] DEV5 teardown tpm4 complete
+[026057] DEV1 create tpm0
+[026066] DEV5 create tpm4
+[026115] DEV1 ready (raw+rm)
+[026117] DEV1 recreated
+[026119] DEV5 ready (raw+rm)
+[026120] DEV5 recreated
+[026123] DEV4 recreate begin
+[026128] DEV3 recreate begin
+[026130] DEV5 recreate begin
+[026161] DEV5 teardown tpm4 complete
+[026165] DEV4 teardown tpm5 complete
+[026168] DEV5 create tpm4
+[026174] DEV3 teardown tpm2 complete
+[026178] DEV4 create tpm5
+[026188] DEV3 create tpm2
+[026221] DEV5 ready (raw+rm)
+[026222] DEV5 recreated
+[026227] client ops=1248 (sample on DEV5)
+[026232] DEV4 ready (raw+rm)
+[026234] DEV4 recreated
+[026238] DEV4 recreate begin
+[026241] DEV3 ready (raw+rm)
+[026242] DEV3 recreated
+[026243] DEV3 recreate begin
+[026245] DEV0 recreate begin
+[026276] DEV4 teardown tpm5 complete
+[026280] DEV0 teardown tpm1 complete
+[026286] DEV3 teardown tpm2 complete
+[026296] DEV0 create tpm2
+[026302] DEV3 create tpm5
+[026304] DEV4 create tpm1
+[026350] DEV0 ready (raw+rm)
+[026352] DEV0 recreated
+[026356] DEV3 ready (raw+rm)
+[026357] DEV3 recreated
+[026358] DEV4 ready (raw+rm)
+[026360] DEV4 recreated
+[026365] DEV5 recreate begin
+[026373] DEV0 recreate begin
+[026383] DEV5 teardown tpm4 complete
+[026386] DEV2 recreate begin
+[026394] DEV0 teardown tpm2 complete
+[026404] DEV5 create tpm2
+[026409] DEV0 create tpm4
+[026426] DEV2 teardown tpm3 complete
+[026441] DEV2 create tpm3
+[026462] DEV5 ready (raw+rm)
+[026463] DEV5 recreated
+[026465] DEV0 ready (raw+rm)
+[026467] DEV0 recreated
+[026468] DEV1 recreate begin
+[026497] DEV2 ready (raw+rm)
+[026499] DEV2 recreated
+[026500] DEV1 teardown tpm0 complete
+[026501] DEV2 recreate begin
+[026506] DEV3 recreate begin
+[026511] DEV1 create tpm0
+[026529] DEV3 teardown tpm5 complete
+[026537] DEV2 teardown tpm3 complete
+[026544] DEV3 create tpm3
+[026547] DEV2 create tpm5
+[026568] DEV1 ready (raw+rm)
+[026573] DEV1 recreated
+[026601] DEV2 ready (raw+rm)
+[026603] DEV2 recreated
+[026604] DEV3 ready (raw+rm)
+[026605] DEV3 recreated
+[026613] DEV0 recreate begin
+[026616] DEV4 recreate begin
+[026645] DEV1 recreate begin
+[026652] DEV0 teardown tpm4 complete
+[026662] DEV0 create tpm4
+[026665] DEV4 teardown tpm1 complete
+[026674] DEV4 create tpm1
+[026697] DEV1 teardown tpm0 complete
+[026700] DEV1 create tpm0
+[026721] DEV0 ready (raw+rm)
+[026723] DEV0 recreated
+[026731] DEV4 ready (raw+rm)
+[026732] DEV4 recreated
+[026743] DEV0 recreate begin
+[026747] DEV2 recreate begin
+[026759] DEV1 ready (raw+rm)
+[026761] DEV1 recreated
+[026762] DEV1 recreate begin
+[026768] DEV3 recreate begin
+[026796] DEV0 teardown tpm4 complete
+[026812] DEV0 create tpm4
+[026814] DEV2 teardown tpm5 complete
+[026823] DEV1 teardown tpm0 complete
+[026834] DEV3 teardown tpm3 complete
+[026840] DEV2 create tpm0
+[026845] DEV1 create tpm5
+[026848] DEV3 create tpm3
+[026867] DEV0 ready (raw+rm)
+[026867] DEV0 recreated
+[026898] DEV2 ready (raw+rm)
+[026899] DEV2 recreated
+[026906] DEV3 ready (raw+rm)
+[026909] DEV3 recreated
+[026949] DEV1 ready (raw+rm)
+[026950] DEV1 recreated
+[026954] client ops=1280 (sample on DEV3)
+[026955] DEV3 recreate begin
+[026979] DEV3 teardown tpm3 complete
+[026985] DEV0 recreate begin
+[026991] DEV3 create tpm3
+[027011] DEV0 teardown tpm4 complete
+[027015] DEV0 create tpm4
+[027049] DEV3 ready (raw+rm)
+[027050] DEV3 recreated
+[027055] DEV2 recreate begin
+[027063] DEV3 recreate begin
+[027071] DEV0 ready (raw+rm)
+[027072] DEV0 recreated
+[027081] DEV2 teardown tpm0 complete
+[027088] DEV2 create tpm0
+[027090] DEV3 teardown tpm3 complete
+[027099] DEV3 create tpm3
+[027143] DEV2 ready (raw+rm)
+[027144] DEV2 recreated
+[027148] DEV4 recreate begin
+[027154] DEV3 ready (raw+rm)
+[027155] DEV3 recreated
+[027156] DEV3 recreate begin
+[027175] DEV4 teardown tpm1 complete
+[027178] DEV3 teardown tpm3 complete
+[027184] DEV3 create tpm3
+[027188] DEV4 create tpm1
+[027243] DEV3 ready (raw+rm)
+[027244] DEV3 recreated
+[027245] DEV4 ready (raw+rm)
+[027246] DEV4 recreated
+[027247] DEV5 recreate begin
+[027275] DEV5 teardown tpm2 complete
+[027282] DEV5 create tpm2
+[027302] DEV0 recreate begin
+[027323] DEV0 teardown tpm4 complete
+[027331] DEV0 create tpm4
+[027338] DEV5 ready (raw+rm)
+[027340] DEV5 recreated
+[027347] DEV5 recreate begin
+[027373] DEV5 teardown tpm2 complete
+[027386] DEV5 create tpm2
+[027389] DEV0 ready (raw+rm)
+[027392] DEV0 recreated
+[027444] DEV5 ready (raw+rm)
+[027445] DEV5 recreated
+[027453] DEV5 recreate begin
+[027457] DEV3 recreate begin
+[027463] client ops=1312 (sample on DEV4)
+[027481] DEV5 teardown tpm2 complete
+[027487] DEV5 create tpm2
+[027488] DEV3 teardown tpm3 complete
+[027496] DEV3 create tpm3
+[027543] DEV5 ready (raw+rm)
+[027544] DEV5 recreated
+[027549] DEV3 ready (raw+rm)
+[027550] DEV3 recreated
+[027555] DEV4 recreate begin
+[027562] DEV3 recreate begin
+[027593] DEV4 teardown tpm1 complete
+[027599] DEV3 teardown tpm3 complete
+[027605] DEV4 create tpm1
+[027621] DEV3 create tpm3
+[027663] DEV4 ready (raw+rm)
+[027665] DEV4 recreated
+[027666] DEV4 recreate begin
+[027676] DEV3 ready (raw+rm)
+[027677] DEV3 recreated
+[027682] DEV1 recreate begin
+[027712] DEV4 teardown tpm1 complete
+[027715] DEV4 create tpm1
+[027725] DEV1 teardown tpm5 complete
+[027749] DEV1 create tpm5
+[027770] DEV4 ready (raw+rm)
+[027771] DEV4 recreated
+[027785] DEV2 recreate begin
+[027821] DEV2 teardown tpm0 complete
+[027864] DEV1 ready (raw+rm)
+[027864] DEV1 recreated
+[027880] DEV2 create tpm0
+[027909] DEV0 recreate begin
+[027939] DEV2 ready (raw+rm)
+[027941] DEV2 recreated
+[027943] DEV0 teardown tpm4 complete
+[027950] DEV0 create tpm4
+[028007] DEV0 ready (raw+rm)
+[028008] DEV0 recreated
+[028046] DEV5 recreate begin
+[028061] client ops=1344 (sample on DEV2)
+[028074] DEV3 recreate begin
+[028085] DEV5 teardown tpm2 complete
+[028093] DEV5 create tpm2
+[028114] DEV3 teardown tpm3 complete
+[028121] DEV3 create tpm3
+[028152] DEV5 ready (raw+rm)
+[028153] DEV5 recreated
+[028159] DEV4 recreate begin
+[028178] DEV3 ready (raw+rm)
+[028179] DEV3 recreated
+[028201] DEV0 recreate begin
+[028203] DEV4 teardown tpm1 complete
+[028218] DEV4 create tpm1
+[028244] DEV0 teardown tpm4 complete
+[028252] DEV0 create tpm4
+[028276] DEV4 ready (raw+rm)
+[028277] DEV4 recreated
+[028281] DEV3 recreate begin
+[028309] DEV0 ready (raw+rm)
+[028310] DEV3 teardown tpm3 complete
+[028316] DEV0 recreated
+[028322] DEV5 recreate begin
+[028324] DEV3 create tpm3
+[028344] DEV5 teardown tpm2 complete
+[028345] DEV0 recreate begin
+[028351] DEV5 create tpm2
+[028367] DEV0 teardown tpm4 complete
+[028372] DEV0 create tpm4
+[028377] DEV3 ready (raw+rm)
+[028378] DEV3 recreated
+[028378] DEV3 recreate begin
+[028402] DEV3 teardown tpm3 complete
+[028409] DEV5 ready (raw+rm)
+[028410] DEV5 recreated
+[028412] DEV3 create tpm3
+[028426] DEV0 ready (raw+rm)
+[028427] DEV0 recreated
+[028428] DEV0 recreate begin
+[028446] DEV0 teardown tpm4 complete
+[028451] DEV0 create tpm4
+[028466] DEV3 ready (raw+rm)
+[028466] DEV3 recreated
+[028473] DEV2 recreate begin
+[028497] DEV2 teardown tpm0 complete
+[028505] DEV0 ready (raw+rm)
+[028508] DEV0 recreated
+[028510] DEV0 recreate begin
+[028512] DEV2 create tpm0
+[028536] DEV4 recreate begin
+[028548] DEV0 teardown tpm4 complete
+[028556] DEV4 teardown tpm1 complete
+[028561] DEV0 create tpm4
+[028568] DEV2 ready (raw+rm)
+[028570] DEV2 recreated
+[028572] DEV4 create tpm1
+[028575] DEV5 recreate begin
+[028614] DEV5 teardown tpm2 complete
+[028618] DEV0 ready (raw+rm)
+[028619] DEV0 recreated
+[028623] DEV5 create tpm2
+[028627] DEV4 ready (raw+rm)
+[028628] DEV4 recreated
+[028634] DEV0 recreate begin
+[028662] DEV0 teardown tpm4 complete
+[028672] DEV0 create tpm4
+[028678] DEV5 ready (raw+rm)
+[028679] DEV5 recreated
+[028689] DEV1 recreate begin
+[028727] DEV0 ready (raw+rm)
+[028728] DEV0 recreated
+[028730] DEV1 teardown tpm5 complete
+[028733] DEV0 recreate begin
+[028742] DEV1 create tpm5
+[028755] DEV0 teardown tpm4 complete
+[028761] DEV0 create tpm4
+[028797] DEV1 ready (raw+rm)
+[028799] DEV1 recreated
+[028815] DEV0 ready (raw+rm)
+[028816] DEV0 recreated
+[028817] DEV2 recreate begin
+[028818] DEV0 recreate begin
+[028847] DEV0 teardown tpm4 complete
+[028849] DEV2 teardown tpm0 complete
+[028853] DEV0 create tpm0
+[028856] DEV2 create tpm4
+[028910] DEV0 ready (raw+rm)
+[028911] DEV0 recreated
+[028913] DEV0 recreate begin
+[028915] DEV2 ready (raw+rm)
+[028916] DEV2 recreated
+[028922] client ops=1376 (sample on DEV1)
+[028931] DEV1 recreate begin
+[028934] DEV0 teardown tpm0 complete
+[028943] DEV0 create tpm0
+[028959] DEV1 teardown tpm5 complete
+[028966] DEV1 create tpm5
+[029002] DEV0 ready (raw+rm)
+[029003] DEV0 recreated
+[029004] DEV0 recreate begin
+[029020] DEV1 ready (raw+rm)
+[029024] DEV1 recreated
+[029026] DEV2 recreate begin
+[029030] DEV0 teardown tpm0 complete
+[029037] DEV0 create tpm0
+[029055] DEV2 teardown tpm4 complete
+[029067] DEV2 create tpm4
+[029092] DEV0 ready (raw+rm)
+[029093] DEV0 recreated
+[029095] DEV0 recreate begin
+[029121] DEV2 ready (raw+rm)
+[029126] DEV2 recreated
+[029128] DEV2 recreate begin
+[029130] DEV0 teardown tpm0 complete
+[029140] DEV4 recreate begin
+[029144] DEV0 create tpm0
+[029170] DEV2 teardown tpm4 complete
+[029177] DEV4 teardown tpm1 complete
+[029180] DEV2 create tpm1
+[029186] DEV4 create tpm4
+[029197] DEV0 ready (raw+rm)
+[029199] DEV0 recreated
+[029234] DEV2 ready (raw+rm)
+[029235] DEV2 recreated
+[029239] DEV4 ready (raw+rm)
+[029240] DEV4 recreated
+[029301] DEV4 recreate begin
+[029304] DEV1 recreate begin
+[029344] DEV4 teardown tpm4 complete
+[029352] DEV4 create tpm4
+[029354] DEV1 teardown tpm5 complete
+[029364] DEV1 create tpm5
+[029407] DEV4 ready (raw+rm)
+[029408] DEV4 recreated
+[029413] client ops=1408 (sample on DEV4)
+[029418] DEV1 ready (raw+rm)
+[029419] DEV1 recreated
+[029420] DEV3 recreate begin
+[029437] DEV4 recreate begin
+[029442] DEV3 teardown tpm3 complete
+[029449] DEV3 create tpm3
+[029458] DEV4 teardown tpm4 complete
+[029464] DEV4 create tpm4
+[029504] DEV3 ready (raw+rm)
+[029505] DEV3 recreated
+[029518] DEV4 ready (raw+rm)
+[029522] DEV4 recreated
+[029523] DEV5 recreate begin
+[029534] DEV2 recreate begin
+[029537] DEV1 recreate begin
+[029538] DEV3 recreate begin
+[029550] DEV5 teardown tpm2 complete
+[029565] DEV5 create tpm2
+[029579] DEV3 teardown tpm3 complete
+[029588] DEV1 teardown tpm5 complete
+[029599] DEV2 teardown tpm1 complete
+[029602] DEV3 create tpm3
+[029607] DEV1 create tpm1
+[029611] DEV2 create tpm5
+[029625] DEV5 ready (raw+rm)
+[029630] DEV5 recreated
+[029657] DEV3 ready (raw+rm)
+[029658] DEV3 recreated
+[029664] DEV1 ready (raw+rm)
+[029665] DEV1 recreated
+[029672] DEV1 recreate begin
+[029689] DEV1 teardown tpm1 complete
+[029697] DEV1 create tpm1
+[029718] DEV2 ready (raw+rm)
+[029720] DEV2 recreated
+[029726] DEV3 recreate begin
+[029734] DEV5 recreate begin
+[029748] DEV3 teardown tpm3 complete
+[029753] DEV3 create tpm3
+[029757] DEV1 ready (raw+rm)
+[029765] DEV1 recreated
+[029770] DEV5 teardown tpm2 complete
+[029780] DEV5 create tpm2
+[029814] DEV3 ready (raw+rm)
+[029815] DEV3 recreated
+[029833] DEV5 ready (raw+rm)
+[029835] DEV5 recreated
+[029836] DEV4 recreate begin
+[029838] DEV5 recreate begin
+[029873] DEV5 teardown tpm2 complete
+[029878] DEV4 teardown tpm4 complete
+[029884] DEV5 create tpm2
+[029889] DEV4 create tpm4
+[029941] DEV5 ready (raw+rm)
+[029942] DEV5 recreated
+[029944] DEV5 recreate begin
+[029946] DEV4 ready (raw+rm)
+[029946] DEV4 recreated
+[029947] DEV4 recreate begin
+[029992] DEV5 teardown tpm2 complete
+[029995] DEV4 teardown tpm4 complete
+[030002] DEV4 create tpm4
+[030006] DEV5 create tpm2
+[030062] DEV4 ready (raw+rm)
+[030064] DEV4 recreated
+[030067] DEV5 ready (raw+rm)
+[030068] DEV5 recreated
+[030083] client ops=1440 (sample on DEV2)
+[030099] DEV5 recreate begin
+[030102] DEV0 recreate begin
+[030106] DEV2 recreate begin
+[030143] DEV2 teardown tpm5 complete
+[030147] DEV0 teardown tpm0 complete
+[030156] DEV0 create tpm2
+[030158] DEV2 create tpm0
+[030160] DEV5 teardown tpm2 complete
+[030167] DEV5 create tpm5
+[030215] DEV2 ready (raw+rm)
+[030216] DEV2 recreated
+[030218] DEV0 ready (raw+rm)
+[030219] DEV0 recreated
+[030221] DEV3 recreate begin
+[030224] DEV5 ready (raw+rm)
+[030225] DEV5 recreated
+[030230] DEV5 recreate begin
+[030258] DEV3 teardown tpm3 complete
+[030269] DEV3 create tpm3
+[030272] DEV5 teardown tpm5 complete
+[030282] DEV5 create tpm5
+[030324] DEV3 ready (raw+rm)
+[030326] DEV3 recreated
+[030330] DEV0 recreate begin
+[030337] DEV5 ready (raw+rm)
+[030339] DEV5 recreated
+[030358] DEV0 teardown tpm2 complete
+[030363] DEV0 create tpm2
+[030371] DEV3 recreate begin
+[030393] DEV3 teardown tpm3 complete
+[030400] DEV3 create tpm3
+[030419] DEV0 ready (raw+rm)
+[030420] DEV0 recreated
+[030437] DEV0 recreate begin
+[030454] DEV3 ready (raw+rm)
+[030456] DEV3 recreated
+[030461] DEV3 recreate begin
+[030475] DEV0 teardown tpm2 complete
+[030493] duration reached, stopping workers
+[030497] DEV0 create tpm2
+[030511] DEV3 teardown tpm3 complete
+[   43.654117] vtpmx_stress (60) used greatest stack depth: 27768 bytes left
+[030522] DEV3 create tpm3
+[030555] DEV0 ready (raw+rm)
+[030557] DEV0 recreated
+[030586] DEV3 ready (raw+rm)
+[030586] DEV3 recreated
+[030599] tearing down all slots
+[030619] DEV0 teardown tpm2 complete
+[030643] DEV1 teardown tpm1 complete
+[030661] DEV2 teardown tpm0 complete
+[030688] DEV3 teardown tpm3 complete
+[030728] DEV4 teardown tpm4 complete
+[030751] DEV5 teardown tpm5 complete
+
+================ SUMMARY ================
+client_ops=1460 recreates=578 unexpected_errno=0 stray_nodes=0
+RESULT: PASS
+Logic run validates concurrent register/teardown cleanup. Re-run on the KASAN
+guest: any KASAN/UAF report during create/teardown is a memory-safety lead.
+[   44.477010] vtpmx_stress (52) used greatest stack depth: 27552 bytes left
+################## END vtpmx_stress rc=0 ##################
+
+================ KASAN / BUG SUMMARY (tests=stress) ================
+[    0.000000] kasan: KernelAddressSanitizer initialized
+================ DONE tests=stress ================
+[   44.744424] ACPI: PM: Preparing to enter system sleep state S5
+[   44.751681] reboot: Power down

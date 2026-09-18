@@ -1,0 +1,155 @@
+##################################################
+##### BOOT probe (qemu timeout=220s) #####
+start 03:59:30
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) === QEMU rc=0 tag=probe log=traces/boot_probe.serial ===
+279:################## BEGIN uinput_probe ##################
+328:################## BEGIN vtpmx_probe ##################
+373:================ DONE tests=probe ================
+qemu-outer-rc=0
+==================== traces/boot_probe.serial ====================
+DONE_MARKER : DONE tests=probe
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN uinput_probe ##################
+  START BEGIN vtpmx_probe ##################
+  END uinput_probe rc=0
+  END vtpmx_probe rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS
+end 03:59:53
+##################################################
+##### BOOT race (qemu timeout=220s) #####
+start 03:59:53
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) === QEMU rc=0 tag=race log=traces/boot_race.serial ===
+276:################## BEGIN vtpmx_race ##################
+376:================ DONE tests=race ================
+qemu-outer-rc=0
+==================== traces/boot_race.serial ====================
+DONE_MARKER : DONE tests=race
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_race ##################
+  END vtpmx_race rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS
+end 04:00:28
+##################################################
+##### BOOT err (qemu timeout=200s) #####
+start 04:00:28
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) === QEMU rc=0 tag=err log=traces/boot_err.serial ===
+279:################## BEGIN vtpmx_err ##################
+309:================ DONE tests=err ================
+qemu-outer-rc=0
+==================== traces/boot_err.serial ====================
+DONE_MARKER : DONE tests=err
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_err ##################
+  END vtpmx_err rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS
+end 04:00:51
+##################################################
+##### BOOT async (qemu timeout=260s) #####
+start 04:00:51
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) === QEMU rc=0 tag=async log=traces/boot_async.serial ===
+280:################## BEGIN vtpmx_async ##################
+316:================ DONE tests=async ================
+qemu-outer-rc=0
+==================== traces/boot_async.serial ====================
+DONE_MARKER : DONE tests=async
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_async ##################
+  END vtpmx_async rc=0
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS
+end 04:01:29
+##################################################
+##### BOOT lifetime (qemu timeout=420s) #####
+start 04:01:29
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) === QEMU rc=0 tag=lifetime log=traces/boot_lifetime.serial ===
+280:################## BEGIN vtpmx_lifetime ##################
+340:================ DONE tests=lifetime ================
+qemu-outer-rc=0
+==================== traces/boot_lifetime.serial ====================
+DONE_MARKER : DONE tests=lifetime
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_lifetime ##################
+  END vtpmx_lifetime rc=0
+  RESULT: PASS
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS
+end 04:02:02
+##################################################
+##### BOOT stress (qemu timeout=420s) #####
+start 04:02:02
+QEMU 8.2.2 monitor - type 'help' for more information
+(qemu) === QEMU rc=0 tag=stress log=traces/boot_stress.serial ===
+277:################## BEGIN vtpmx_stress ##################
+3252:================ DONE tests=stress ================
+qemu-outer-rc=0
+==================== traces/boot_stress.serial ====================
+DONE_MARKER : DONE tests=stress
+KERNEL      : kasan=0 bug=0 oops=0 gpf/unable=0 uaf=0 bounds=0 refcount=0 panic=0 | warn(informational)=0
+HARNESS blocks:
+  START BEGIN vtpmx_stress ##################
+  END vtpmx_stress rc=0
+  RESULT: PASS
+  hangs(watchdog)=0
+KERNEL_RESULT: PASS (no KASAN/BUG/Oops/UAF/OOB/refcount report in this boot)
+SCOPE NOTE  : PASS means no memory-safety violation was OBSERVED in this boot's defined
+              interleaving space; it is not a proof the driver is bug-free.
+
+==================== SUMMARY ====================
+OVERALL: NO KERNEL MEMORY-SAFETY FINDING IN THESE BOOTS
+end 04:02:53
+##################################################
+################## MATRIX AGGREGATE ##################
+===== probe =====
+################## END uinput_probe rc=0 ##################
+################## END vtpmx_probe rc=0 ##################
+===== race =====
+################## END vtpmx_race rc=0 ##################
+===== err =====
+################## END vtpmx_err rc=0 ##################
+===== async =====
+################## END vtpmx_async rc=0 ##################
+===== lifetime =====
+RESULT: PASS
+################## END vtpmx_lifetime rc=0 ##################
+===== stress =====
+RESULT: PASS
+################## END vtpmx_stress rc=0 ##################
+triage exit=0
