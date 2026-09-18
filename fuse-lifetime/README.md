@@ -132,11 +132,14 @@ interrupt orderings deterministically (I1 observes the FUSE_INTERRUPT request
 with `intr.unique == original.unique`; I2 observes the kernel correctly
 dropping the interrupt after FINISHED).
 
-**Honest negative result.** This does *not* prove `fs/fuse` is bug-free.  It
-proves that, within the explicitly defined state/teardown/interrupt space and
-the L4 probabilistic window, no memory-safety violation was observed under
-Generic KASAN.  Scope, seeds and windows are documented per case; absence of a
-crash is reported as exactly that.
+**Honest negative result.** No memory-safety violation, refcount/list
+corruption, or unexpected request-lifetime failure was observed within the
+exercised state and interleaving space. This does *not* establish absence of
+bugs outside the exercised request states, protocol operations, teardown
+paths, and timing windows — it does not prove `fs/fuse` is bug-free. KASAN
+gives high confidence on memory safety; "lifetime violation" is a broader
+notion and is not collapsed into that claim. Scope and windows are documented
+per case and absence of a crash is reported as exactly that.
 
 ## 7. Reproduction
 

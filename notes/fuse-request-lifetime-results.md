@@ -105,11 +105,19 @@ normal request path, both interrupt orderings, and a probabilistic copy/abort
 window. It does **not** cover: malformed `fuse_out_header`/variable-arg length
 arithmetic, `FUSE_BATCH_FORGET` × interrupt (planned L5), notifications,
 background/readahead/write-back I/O, DAX/virtio-fs, or mount-option parsing.
-The correct conclusion is:
+The correct conclusion, stated narrowly, is:
 
-> Within the explicitly defined state, teardown and interrupt interleaving
-> space — and the L4 probabilistic copy window — no memory-safety or
-> object-lifetime violation was observed under Generic KASAN on Linux 6.8.
+> **No memory-safety violation, refcount/list corruption, or unexpected
+> request-lifetime failure was observed within the exercised state and
+> interleaving space** — pending / processing / interrupted / locked-copy
+> teardown, both interrupt orderings, and the L4 probabilistic copy window —
+> under Generic KASAN on Linux 6.8.
+
+The study does **not** establish absence of bugs outside the exercised request
+states, protocol operations, teardown paths, and timing windows.  KASAN gives
+high confidence on memory safety, whereas "lifetime violation" is a broader
+notion, so the two are kept separate rather than collapsed into a vague
+"no lifetime bug".
 
 No CVE is claimed, no patch is implied, and "no crash" is not reported as "no
 bug".
