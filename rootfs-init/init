@@ -1,0 +1,67 @@
+#!/bin/sh
+# KASAN research initramfs init. Selects a test subset via cmdline tests=TAG so each
+# experiment gets its own isolated boot (BOOT matrix) instead of one giant run.
+# v2: adds grammar-based vtpmx_lifetime (L1-L5 incl. RM) and vtpmx_stress.
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev 2>/dev/null
+mount -t tmpfs tmpfs /tmp
+dmesg -n 7 2>/dev/null || true
+
+TESTS=all
+for x in $(cat /proc/cmdline); do
+  case "$x" in
+    tests=*) TESTS="${x#tests=}" ;;
+  esac
+done
+
+echo "================ KASAN RESEARCH INITRAMFS ================"
+cat /proc/version
+echo "--- cmdline ---"; cat /proc/cmdline
+echo "--- KASAN init ---"
+dmesg 2>/dev/null | grep -iE "KernelAddressSanitizer initialized|KASAN: Kernel" | head -2
+echo "--- device nodes ---"
+ls -l /dev/vtpmx /dev/uinput /dev/hpet 2>&1
+echo "========================================================="
+
+run_one() {
+  t=$1
+  if [ -x "/$t" ]; then
+    echo "################## BEGIN $t ##################"
+    "/$t"
+    echo "################## END $t rc=$? ##################"
+  else
+    echo "################## SKIP $t (not present) ##################"
+  fi
+}
+
+case "$TESTS" in
+  boot0)    echo "BOOT0: sanity only, no harness" ;;
+  probe)    run_one uinput_probe; run_one vtpmx_probe ;;
+  race)     run_one vtpmx_race ;;
+  err)      run_one vtpmx_err ;;
+  async)    run_one vtpmx_async ;;
+  lifetime) run_one vtpmx_lifetime ;;
+  stress)
+    if [ -x /vtpmx_stress ]; then
+      echo "################## BEGIN vtpmx_stress ##################"
+      /vtpmx_stress 30 0x1337
+      echo "################## END vtpmx_stress rc=$? ##################"
+    else
+      echo "################## SKIP vtpmx_stress (not present) ##################"
+    fi
+    ;;
+  all)
+    for t in uinput_probe vtpmx_probe vtpmx_race vtpmx_err vtpmx_async vtpmx_lifetime hpet_probe; do
+      run_one "$t"
+    done
+    ;;
+  *) echo "unknown tests=$TESTS" ;;
+esac
+
+echo ""
+echo "================ KASAN / BUG SUMMARY (tests=$TESTS) ================"
+dmesg | grep -iE "KASAN:|BUG:|Oops|slab-out-of-bounds|heap-out-of-bounds|stack-out-of-bounds|use-after-free|use-after-scope|general protection|kernel panic|not syncing|Call Trace" | head -150
+echo "================ DONE tests=$TESTS ================"
+if grep -q autorun /proc/cmdline; then sync; poweroff -f; fi
+exec /bin/sh
