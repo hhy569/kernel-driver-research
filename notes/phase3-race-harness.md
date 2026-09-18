@@ -105,6 +105,41 @@ rollback) has now been driven through deterministic interleavings on the stock k
 
 ---
 
+## 4c. Concurrent create/teardown/cleanup fuzzing — `harness/vtpmx_stress.c` (R7)
+
+The deterministic harnesses pin specific interleavings; R7 instead hammers the lifetime
+barriers from six threads at once with a **fixed seed** (`argv[2]`, default `0x1234`) for
+reproducibility. A first naive version (create→immediate close) produced **zero** client
+operations and ~7k ENOENT: devices were torn down within ~30 ms, so clients almost never saw a
+live node — a self-inflicted false negative. The corrected **device-pool model**:
+
+- 6 proxy devices are kept alive, each with its own emulator thread, so live `/dev/tpmN` and
+  `/dev/tpmrmN` nodes always exist;
+- a **recycler** thread continuously tears down a random slot (`close(serverfd)` →
+  `delete_device` → `tpm_chip_unregister`) and immediately creates a fresh device in that slot
+  (churn every ~30–280 ms), while the other 5 slots stay live;
+- 2 raw + 2 RM clients open random live slots with `O_NONBLOCK`, drive the async-work path
+  (`write`→`poll`→`read`), and probe `lseek` (must stay ESPIPE); teardown deliberately races
+  in-flight `tpm_dev_async_work` and opens — a randomized, multi-threaded R1/R3/R4c/R10.
+
+Assertions (stock kernel): SIGALRM hard watchdog (no hang); open-fd count returns to baseline;
+no `/dev/tpmN` node leaks after the pool is torn down; `lseek` stays ESPIPE. Benign teardown
+errno (EBUSY raw single-open, ENOENT/EIO/ETIME/EPIPE) are histogrammed, not treated as findings.
+Memory safety is decided by KASAN dmesg in the guest, not by this binary.
+
+**Environment constraint (important, not a kernel bug):** TPM device registration runs an
+auto-startup TPM2 command that needs the userspace emulator thread and the kernel register
+work to be scheduled in a ping/pong. While the KASAN kernel build saturates the VM
+(`-j4` + the resident docker stack, load ~8.7 on 4 cores), the emulator starves and
+`/dev/tpmN` does not appear within the 6 s window — every create rolls back. The earlier
+deterministic harnesses passed because they ran when the CPU was not yet saturated. R7 is
+therefore validated only **after** the build finishes (idle stock kernel, then the KASAN
+guest); running real-time emulator tests under a full build is meaningless. A SIGKILL during
+the failed run left **zero** `/dev/tpmN` nodes behind (only the control `/dev/vtpmx`), itself a
+data point that abnormal process death still triggers clean per-fd teardown.
+
+---
+
 ## 5. What this phase does and does not establish
 
 **Established on the stock kernel (logic level):**
