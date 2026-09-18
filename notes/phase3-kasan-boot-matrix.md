@@ -133,3 +133,25 @@ rich lifetime/state machine; (2) staging driver with a real userspace ABI (audit
 lifetime comments, error paths, recently changed code); (3) a deliberately small networking
 control-plane object (netlink/setsockopt/virtual networking) — high value but easy to balloon,
 so pin one tiny object model. Avoid GPU/USB/Wi-Fi now (multi-layer "octopus" scope).
+
+### 8.1 Preliminary candidate scan (2026-09-18, preparedness only — vtpmx KASAN result has priority)
+
+Source-level scan against the trimmed Kernel B `.config`; no second-target work begins until the
+vtpmx KASAN matrix is read back and reviewed.
+
+| candidate | node / surface | in current KASAN config? | state / lifetime richness | syzkaller saturation | notes |
+|---|---|---|---|---|---|
+| FUSE | `/dev/fuse`, read/write device protocol | no (`FUSE_FS` off; light reconfig) | very high: fc/fuse_dev/request/folio lifecycle, abort/umount races, connected/pending state | high but still active (fuse2, passthrough) | best method-generalization target; must pin one small object (request lifecycle or abort) to avoid octopus |
+| vhost (-net/-vsock) | `/dev/vhost-net`, ioctl | no (needs NET+VHOST+TUN, heavy reconfig) | high: vdev/vq/worker, refcount + workqueue, pairs with tun | medium-high | classic software kernel component QEMU drives; heavy kernel reconfig |
+| device-mapper | `/dev/mapper/control` | **yes (`BLK_DEV_DM=y`)** | medium-high: dm_table/target/device create-remove | high | zero reconfig; needs a block backend |
+| loop | `/dev/loop-control`, `/dev/loopN` | **yes (`BLK_DEV_LOOP=y`)** | medium: configure fd/offset/sizelimit/blocksize, teardown | very high | zero reconfig, clean invariants but low novelty |
+| uhid | `/dev/uhid` | no (UHID off; INPUT already on, light reconfig) | medium: virtual HID device create/report/destroy | medium | too similar to the Day-1 uinput case — weak differentiation |
+| userfaultfd | syscall + `/dev/userfaultfd` | no (`USERFAULTFD` off) | narrow but deep: fault context lifetime, race/UAF relevance | medium | exploitation-oriented; weak link to the parser/fuzzing portfolio |
+| binder | `/dev/binder*` | no (`ANDROID_BINDER_IPC` off) | textbook refcount/transaction lifetime | very high | Android-specific, large, heavily saturated |
+| ALSA sequencer | `/dev/snd/seq` | no (needs SND, medium reconfig) | medium-high: client/port/subscription lifetime | medium | runs with snd-dummy; historical CVEs |
+
+Working lean (revisit with the external reviewer after vtpmx KASAN): if a zero-reconfig second
+case is wanted, device-mapper beats loop on state richness; if a small reconfig is acceptable,
+**FUSE request/abort lifetime** best matches criteria ①③⑤⑥⑦ and most clearly shows the
+recon→state-machine→invariant→harness method transferring off TPM. vhost is the strongest
+"virtual device" story but costs a NET-heavy kernel rebuild.
